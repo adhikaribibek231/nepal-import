@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Any, Iterable, cast
 
 import fitz
 
@@ -20,7 +21,8 @@ def extract_text_from_pdf(pdf_path: str | Path) -> Path:
             fitz.open(input_path) as doc,
             open(output_path, "w", encoding="utf-8") as file,
         ):
-            for page_number, page in enumerate(doc, start=1):
+            iterable_doc = cast(Iterable[Any], doc)  # just to silence typechecker
+            for page_number, page in enumerate(iterable_doc, start=1):
                 text = page.get_text("text", sort=True).strip()
 
                 file.write(f"--- PAGE {page_number} ---\n")

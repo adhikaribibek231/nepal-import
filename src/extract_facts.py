@@ -2,7 +2,7 @@ import re
 
 
 def extract_standards(text: str) -> list[str]:
-    pattern = r"IEC\s+\d+(?:-\d+)*(?:[:\s]\d{4})?"
+    pattern = r"\bIEC\s{1,2}\d+(?:-\d+)*(?:[:\s]\d{4})?"
     return sorted(set(re.findall(pattern, text)))
 
 
@@ -25,6 +25,6 @@ def process_file(file_path: str):
 
 
 if __name__ == "__main__":
-    target_file = "outputs/extracted_text/DSS_GZES230100125901_combined-1.txt"
-    # target_file = "outputs/extracted_text/188_1115.txt"
+    # target_file = "outputs/extracted_text/DSS_GZES230100125901_combined-1.txt"
+    target_file = "outputs/extracted_text/188_1115.txt"
     process_file(target_file)
