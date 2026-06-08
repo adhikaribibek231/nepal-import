@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import fitz
 
 
@@ -15,7 +16,10 @@ def extract_text_from_pdf(pdf_path: str | Path) -> Path:
     output_path = output_dir / f"{input_path.stem}.txt"
 
     try:
-        with fitz.open(input_path) as doc, open(output_path, "w", encoding="utf-8") as file:
+        with (
+            fitz.open(input_path) as doc,
+            open(output_path, "w", encoding="utf-8") as file,
+        ):
             for page_number, page in enumerate(doc, start=1):
                 text = page.get_text("text", sort=True).strip()
 
@@ -36,8 +40,8 @@ def extract_text_from_pdf(pdf_path: str | Path) -> Path:
 
 if __name__ == "__main__":
     project_root = Path(__file__).resolve().parent.parent
-    #test_pdf = project_root / "data" / "input" / "DSS_GZES230100125901_combined-1.pdf"
-    test_pdf = project_root / "data" / "input" / "188_1115.pdf"
+    test_pdf = project_root / "data" / "input" / "DSS_GZES230100125901_combined-1.pdf"
+    # test_pdf = project_root / "data" / "input" / "188_1115.pdf"
 
     try:
         saved_path = extract_text_from_pdf(test_pdf)

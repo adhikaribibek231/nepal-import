@@ -7,7 +7,7 @@ Sunbridge trading(fictional) needs a proper document draft that they can share w
 ## Planned Pipeline
 
 1. Extract text from the source PDFs.
-2. Extract important facts and attach source references.
+2. Extract important facts and attach source references(use llm for messy + simple regex extraction for obvious fields).
 3. Compare the facts against Nepal import review expectations.
 4. Identify missing, unclear, or conflicting information.
 5. Generate a final review draft in Markdown (and optionally PDF).
