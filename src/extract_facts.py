@@ -5,6 +5,20 @@ import re
 from schemas import Evidence, ExtractedFacts, ProductFact
 
 
+REGEX_FIELDS = {
+    "standard",
+    "ip_rating",
+    "model_name",
+}
+
+LLM_FIELDS = {
+    "manufacturer",
+    "factory",
+    "applicant",
+    "certificate_holder",
+}
+
+
 def extract_standards(text: str) -> list[str]:
     pattern = r"\bIEC\s{1,2}\d+(?:-\d+)*(?:[:\s]\d{4})?"
     return sorted(set(re.findall(pattern, text)))
@@ -26,6 +40,14 @@ def extract_models(text: str) -> list[str]:
             final_models.append(model)
 
     return sorted(final_models)
+
+
+def llm_extract_candidate_facts(
+    text: str,
+    source_file: str,
+    page: str,
+) -> list[ProductFact]:
+    return []
 
 
 def deduplicate_facts(facts: list[ProductFact]) -> list[ProductFact]:
@@ -109,6 +131,14 @@ def process_file(input_path: str, output_json_path: str) -> None:
                     ),
                 )
             )
+
+        llm_facts = llm_extract_candidate_facts(
+            text=page_text,
+            source_file=filename,
+            page=page_num,
+        )
+
+        facts_list.extend(llm_facts)
 
     extracted_facts = ExtractedFacts(facts=deduplicate_facts(facts_list))
 
