@@ -68,3 +68,24 @@ Examples:
 ## How These Models Work in the Pipeline
 
 PDF text → Product Facts + Evidence → Requirement Mapping → Conflicts → Final Draft
+
+
+### Documenting the Extraction Issues
+
+Here is a short, simple README block that only documents the layout problems found in the raw text files:
+
+---
+
+### Known Text Extraction Issues
+
+Raw text extracted from manufacturer PDFs contains formatting bugs that distort the data:
+
+* **Split Table Rows:** Multi-column tables often extract line-by-line incorrectly. Model prefixes get grouped together on one line, while their matching suffixes drop down to the next line:
+```text
+CE-1P3001G   CE-1P5001G   CE-1P6001G
+-230-EU      -230-EU      -230-EU
+
+```
+
+* **Column Line-Breaks:** Tight column layouts break long words and model names across lines using a hyphen and a newline character (e.g., `EU-\nAM2`).
+* **Merged Text Noise:** Artifacts from extraction occasionally smash distinct words and dates together into a single block of text (e.g., `GRAPHIEC      11/Oct/19`).

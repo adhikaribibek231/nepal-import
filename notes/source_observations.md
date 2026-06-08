@@ -94,11 +94,16 @@ source a and source b do not appear to describe the same inverter family.
 source a:
 - CHISAGE CE-1P models
 - single-phase
-
+Samples:
+    CE-1P3001G-230-EU
+    CE-1P20001G-230-EU
 source b:
 - Deye SUN-G06P3 models
 - three-phase
-
+Samples:
+    SUN-3K-G06P3-EU-AM2
+    SUN-3K-G06P3-EU-AM2-P1
+    SUN-10K-G06P3-EU-AM2-P1
 source a focuses on:
 - IEC 62109-1 safety testing
 

@@ -23,7 +23,29 @@
       }
     },
     {
-      "field_name": "ip_ratings",
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "4",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
+      "raw_value": "IP 67",
+      "normalized_value": "IP 67",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "5",
+        "quote_or_summary": "Found IP Rating IP 67",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
       "raw_value": "IP67",
       "normalized_value": "IP67",
       "evidence": {
@@ -34,13 +56,211 @@
       }
     },
     {
-      "field_name": "ip_ratings",
+      "field_name": "model",
+      "raw_value": "CE-1P10001G",
+      "normalized_value": "CE-1P10001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P10001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P10001G-230-EU",
+      "normalized_value": "CE-1P10001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P10001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P13001G-230-EU",
+      "normalized_value": "CE-1P13001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P13001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P16001G-230-EU",
+      "normalized_value": "CE-1P16001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P16001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P18001G-230-EU",
+      "normalized_value": "CE-1P18001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P18001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P3001G",
+      "normalized_value": "CE-1P3001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P3001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P3001G-230-EU",
+      "normalized_value": "CE-1P3001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P3001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P5001G",
+      "normalized_value": "CE-1P5001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P5001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P5001G-230-EU",
+      "normalized_value": "CE-1P5001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P5001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P6001G",
+      "normalized_value": "CE-1P6001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P6001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P6001G-230-EU",
+      "normalized_value": "CE-1P6001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P6001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P8001G",
+      "normalized_value": "CE-1P8001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P8001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P8001G-230-EU",
+      "normalized_value": "CE-1P8001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found model CE-1P8001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
       "raw_value": "IP67",
       "normalized_value": "IP67",
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "8",
         "quote_or_summary": "Found IP Rating IP67",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P13001G",
+      "normalized_value": "CE-1P13001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "8",
+        "quote_or_summary": "Found model CE-1P13001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P16001G",
+      "normalized_value": "CE-1P16001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "8",
+        "quote_or_summary": "Found model CE-1P16001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P18001G",
+      "normalized_value": "CE-1P18001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "8",
+        "quote_or_summary": "Found model CE-1P18001G",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G",
+      "normalized_value": "CE-1P20001G",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "8",
+        "quote_or_summary": "Found model CE-1P20001G",
         "confidence": "high"
       }
     },
@@ -56,7 +276,106 @@
       }
     },
     {
-      "field_name": "ip_ratings",
+      "field_name": "model",
+      "raw_value": "CE-1P10001G-230-EU",
+      "normalized_value": "CE-1P10001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P10001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P13001G-230-EU",
+      "normalized_value": "CE-1P13001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P13001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P16001G-230-EU",
+      "normalized_value": "CE-1P16001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P16001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P18001G-230-EU",
+      "normalized_value": "CE-1P18001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P18001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P3001G-230-EU",
+      "normalized_value": "CE-1P3001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P3001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P5001G-230-EU",
+      "normalized_value": "CE-1P5001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P5001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P6001G-230-EU",
+      "normalized_value": "CE-1P6001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P6001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P8001G-230-EU",
+      "normalized_value": "CE-1P8001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found model CE-1P8001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
       "raw_value": "IP67",
       "normalized_value": "IP67",
       "evidence": {
@@ -67,7 +386,7 @@
       }
     },
     {
-      "field_name": "ip_ratings",
+      "field_name": "ip_rating",
       "raw_value": "IP67",
       "normalized_value": "IP67",
       "evidence": {
@@ -177,6 +496,17 @@
       }
     },
     {
+      "field_name": "ip_rating",
+      "raw_value": "IP 67",
+      "normalized_value": "IP 67",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "38",
+        "quote_or_summary": "Found IP Rating IP 67",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "standard",
       "raw_value": "IEC 60707",
       "normalized_value": "IEC 60707",
@@ -184,6 +514,138 @@
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "44",
         "quote_or_summary": "Found standard IEC 60707",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P3001G-230",
+      "normalized_value": "CE-1P3001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "46",
+        "quote_or_summary": "Found model CE-1P3001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P5001G-230",
+      "normalized_value": "CE-1P5001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "46",
+        "quote_or_summary": "Found model CE-1P5001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P6001G-230",
+      "normalized_value": "CE-1P6001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "46",
+        "quote_or_summary": "Found model CE-1P6001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P10001G-230",
+      "normalized_value": "CE-1P10001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "47",
+        "quote_or_summary": "Found model CE-1P10001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P13001G-230",
+      "normalized_value": "CE-1P13001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "47",
+        "quote_or_summary": "Found model CE-1P13001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P16001G-230",
+      "normalized_value": "CE-1P16001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "47",
+        "quote_or_summary": "Found model CE-1P16001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P8001G-230",
+      "normalized_value": "CE-1P8001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "47",
+        "quote_or_summary": "Found model CE-1P8001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P18001G-230",
+      "normalized_value": "CE-1P18001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "48",
+        "quote_or_summary": "Found model CE-1P18001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230",
+      "normalized_value": "CE-1P20001G-230",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "48",
+        "quote_or_summary": "Found model CE-1P20001G-230",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "49",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "51",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "53",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
         "confidence": "high"
       }
     },
@@ -199,6 +661,50 @@
       }
     },
     {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "56",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "57",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "58",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "59",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "standard",
       "raw_value": "IEC 62852",
       "normalized_value": "IEC 62852",
@@ -206,6 +712,215 @@
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "60",
         "quote_or_summary": "Found standard IEC 62852",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "60",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P3001G-230-EU",
+      "normalized_value": "CE-1P3001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "68",
+        "quote_or_summary": "Found model CE-1P3001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P5001G-230-EU",
+      "normalized_value": "CE-1P5001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "68",
+        "quote_or_summary": "Found model CE-1P5001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P10001G-230-EU",
+      "normalized_value": "CE-1P10001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P10001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P13001G-230-EU",
+      "normalized_value": "CE-1P13001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P13001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P16001G-230-EU",
+      "normalized_value": "CE-1P16001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P16001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P18001G-230-EU",
+      "normalized_value": "CE-1P18001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P18001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P6001G-230-EU",
+      "normalized_value": "CE-1P6001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P6001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P8001G-230-EU",
+      "normalized_value": "CE-1P8001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "69",
+        "quote_or_summary": "Found model CE-1P8001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P10001G-230-EU",
+      "normalized_value": "CE-1P10001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "70",
+        "quote_or_summary": "Found model CE-1P10001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P3001G-230-EU",
+      "normalized_value": "CE-1P3001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "70",
+        "quote_or_summary": "Found model CE-1P3001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P5001G-230-EU",
+      "normalized_value": "CE-1P5001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "70",
+        "quote_or_summary": "Found model CE-1P5001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P6001G-230-EU",
+      "normalized_value": "CE-1P6001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "70",
+        "quote_or_summary": "Found model CE-1P6001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P8001G-230-EU",
+      "normalized_value": "CE-1P8001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "70",
+        "quote_or_summary": "Found model CE-1P8001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P13001G-230-EU",
+      "normalized_value": "CE-1P13001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "71",
+        "quote_or_summary": "Found model CE-1P13001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P16001G-230-EU",
+      "normalized_value": "CE-1P16001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "71",
+        "quote_or_summary": "Found model CE-1P16001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P18001G-230-EU",
+      "normalized_value": "CE-1P18001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "71",
+        "quote_or_summary": "Found model CE-1P18001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model",
+      "raw_value": "CE-1P20001G-230-EU",
+      "normalized_value": "CE-1P20001G-230-EU",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "71",
+        "quote_or_summary": "Found model CE-1P20001G-230-EU",
         "confidence": "high"
       }
     }
