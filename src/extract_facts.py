@@ -1,4 +1,8 @@
+import json
+import os
 import re
+
+from schemas import Evidence, ExtractedFacts, ProductFact
 
 
 def extract_standards(text: str) -> list[str]:
@@ -6,25 +10,45 @@ def extract_standards(text: str) -> list[str]:
     return sorted(set(re.findall(pattern, text)))
 
 
-def process_file(file_path: str):
-    try:
-        with open(file_path, "r", encoding="utf-8") as file:
-            content = file.read()
+def process_file(input_path: str, output_json_path: str):
+    filename = os.path.basename(input_path)
 
-        standards = extract_standards(content)
+    with open(input_path, "r", encoding="utf-8") as file:
+        content = file.read()
 
-        if standards:
-            print(f"--- Found {len(standards)} IEC Standards ---")
-            for standard in standards:
-                print(f" - {standard}")
-        else:
-            print("No IEC standards were found in the file.")
+    pages = re.split(r"--- PAGE (\d+) ---", content)
 
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' could not be found.")
+    facts_list = []
+
+    for i in range(1, len(pages), 2):
+        page_num = pages[i]
+        page_text = pages[i + 1]
+
+        standards = extract_standards(page_text)
+
+        for standard in standards:
+            facts_list.append(
+                ProductFact(
+                    field_name="standard",
+                    raw_value=standard,
+                    normalized_value=standard,
+                    evidence=Evidence(
+                        source_file=filename,
+                        page=page_num,
+                        quote_or_summary=f"Found standard {standard}",
+                        confidence="high",
+                    ),
+                )
+            )
+
+    extracted_facts = ExtractedFacts(facts=facts_list)
+
+    with open(output_json_path, "w", encoding="utf-8") as json_file:
+        json.dump(extracted_facts.model_dump(), json_file, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":
-    # target_file = "outputs/extracted_text/DSS_GZES230100125901_combined-1.txt"
-    target_file = "outputs/extracted_text/188_1115.txt"
-    process_file(target_file)
+    # target_file = "outputs/extracted_text/188_1115.txt"
+    target_file = "outputs/extracted_text/DSS_GZES230100125901_combined-1.txt"
+    output_file = "outputs/extracted_facts.json"
+    process_file(target_file, output_file)

@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 62109-1:2010",
+      "normalized_value": "IEC 62109-1:2010",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "1",
+        "quote_or_summary": "Found standard IEC 62109-1:2010",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 62109",
+      "normalized_value": "IEC 62109",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "3",
+        "quote_or_summary": "Found standard IEC 62109",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60417",
+      "normalized_value": "IEC 60417",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "11",
+        "quote_or_summary": "Found standard IEC 60417",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60529",
+      "normalized_value": "IEC 60529",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "22",
+        "quote_or_summary": "Found standard IEC 60529",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60364-5-54",
+      "normalized_value": "IEC 60364-5-54",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "28",
+        "quote_or_summary": "Found standard IEC 60364-5-54",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60309",
+      "normalized_value": "IEC 60309",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "29",
+        "quote_or_summary": "Found standard IEC 60309",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60990",
+      "normalized_value": "IEC 60990",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "29",
+        "quote_or_summary": "Found standard IEC 60990",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60664",
+      "normalized_value": "IEC 60664",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "30",
+        "quote_or_summary": "Found standard IEC 60664",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60364-1",
+      "normalized_value": "IEC 60364-1",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "31",
+        "quote_or_summary": "Found standard IEC 60364-1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60664-1",
+      "normalized_value": "IEC 60664-1",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "32",
+        "quote_or_summary": "Found standard IEC 60664-1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60755",
+      "normalized_value": "IEC 60755",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "33",
+        "quote_or_summary": "Found standard IEC 60755",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 62020",
+      "normalized_value": "IEC 62020",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "33",
+        "quote_or_summary": "Found standard IEC 62020",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60707",
+      "normalized_value": "IEC 60707",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "44",
+        "quote_or_summary": "Found standard IEC 60707",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 60990",
+      "normalized_value": "IEC 60990",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "56",
+        "quote_or_summary": "Found standard IEC 60990",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 62852",
+      "normalized_value": "IEC 62852",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "60",
+        "quote_or_summary": "Found standard IEC 62852",
+        "confidence": "high"
+      }
+    }
+  ]
+}
