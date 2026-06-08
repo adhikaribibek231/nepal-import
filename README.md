@@ -89,3 +89,12 @@ CE-1P3001G   CE-1P5001G   CE-1P6001G
 
 * **Column Line-Breaks:** Tight column layouts break long words and model names across lines using a hyphen and a newline character (e.g., `EU-\nAM2`).
 * **Merged Text Noise:** Artifacts from extraction occasionally smash distinct words and dates together into a single block of text (e.g., `GRAPHIEC      11/Oct/19`).
+
+
+### Strategic Deferrals
+
+To prioritize building the core pipeline, the following refinements are consciously deferred:
+
+* **Standards Classification:** Every `IEC` standard is logged, including page headers. Differentiating between a primary certification standard and a referenced standard is postponed.
+* **String Variation:** The current regex strictly targets pure `IEC` formats. Handling compound prefixes like `IEC/EN` or mapping them to common base standards is deferred to the normalization phase.
+* **Duplicate Mentions:** Identical facts found on different pages are intentionally preserved to maintain a complete log of evidence.

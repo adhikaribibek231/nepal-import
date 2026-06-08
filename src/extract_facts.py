@@ -18,6 +18,15 @@ LLM_FIELDS = {
     "certificate_holder",
 }
 
+LABELED_FIELDS = (
+    ("Certificate Number", "certificate_number"),
+    ("Report Number", "report_number"),
+    ("Date of Original Issue", "issue_date"),
+    ("Date of issue", "issue_date"),
+    ("Date of Expiry", "expiry_date"),
+    ("Date of Last Revision", "last_revision_date"),
+)
+
 
 def extract_standards(text: str) -> list[str]:
     pattern = r"\bIEC\s{1,2}\d+(?:-\d+)*(?:[:\s]\d{4})?"
@@ -40,6 +49,21 @@ def extract_models(text: str) -> list[str]:
             final_models.append(model)
 
     return sorted(final_models)
+
+
+def extract_labeled_field(text: str, label: str) -> str | None:
+    pattern = rf"(?im)^\s*{re.escape(label)}[\s.]*:\s*(?P<value>[^\r\n]*)"
+    match = re.search(pattern, text)
+
+    if not match:
+        return None
+
+    value = match.group("value").strip()
+
+    if not value or value == "--":
+        return None
+
+    return value
 
 
 def llm_extract_candidate_facts(
@@ -86,6 +110,28 @@ def process_file(input_path: str, output_json_path: str) -> None:
         standards = extract_standards(page_text)
         ip_ratings = extract_ip_ratings(page_text)
         models = extract_models(page_text)
+
+        for label, field_name in LABELED_FIELDS:
+            value = extract_labeled_field(page_text, label)
+
+            if value is None:
+                continue
+
+            facts_list.append(
+                ProductFact(
+                    field_name=field_name,
+                    raw_value=value,
+                    normalized_value=value,
+                    evidence=Evidence(
+                        source_file=filename,
+                        page=page_num,
+                        quote_or_summary=(
+                            f"Found {field_name} from labeled field '{label}'"
+                        ),
+                        confidence="high",
+                    ),
+                )
+            )
 
         for standard in standards:
             facts_list.append(

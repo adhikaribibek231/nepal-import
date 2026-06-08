@@ -1,6 +1,28 @@
 {
   "facts": [
     {
+      "field_name": "report_number",
+      "raw_value": "GZES230100125901",
+      "normalized_value": "GZES230100125901",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "1",
+        "quote_or_summary": "Found report_number from labeled field 'Report Number'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "issue_date",
+      "raw_value": "2023-02-01",
+      "normalized_value": "2023-02-01",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "1",
+        "quote_or_summary": "Found issue_date from labeled field 'Date of issue'",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "standard",
       "raw_value": "IEC 62109-1:2010",
       "normalized_value": "IEC 62109-1:2010",
@@ -23,7 +45,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -36,11 +58,11 @@
     {
       "field_name": "ip_rating",
       "raw_value": "IP 67",
-      "normalized_value": "IP 67",
+      "normalized_value": "IP67",
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "5",
-        "quote_or_summary": "Found IP Rating IP 67",
+        "quote_or_summary": "Found IP rating IP 67",
         "confidence": "high"
       }
     },
@@ -51,23 +73,12 @@
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "7",
-        "quote_or_summary": "Found IP Rating IP67",
+        "quote_or_summary": "Found IP rating IP67",
         "confidence": "high"
       }
     },
     {
-      "field_name": "model",
-      "raw_value": "CE-1P10001G",
-      "normalized_value": "CE-1P10001G",
-      "evidence": {
-        "source_file": "DSS_GZES230100125901_combined-1.txt",
-        "page": "7",
-        "quote_or_summary": "Found model CE-1P10001G",
-        "confidence": "high"
-      }
-    },
-    {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P10001G-230-EU",
       "normalized_value": "CE-1P10001G-230-EU",
       "evidence": {
@@ -78,7 +89,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P13001G-230-EU",
       "normalized_value": "CE-1P13001G-230-EU",
       "evidence": {
@@ -89,7 +100,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P16001G-230-EU",
       "normalized_value": "CE-1P16001G-230-EU",
       "evidence": {
@@ -100,7 +111,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P18001G-230-EU",
       "normalized_value": "CE-1P18001G-230-EU",
       "evidence": {
@@ -111,7 +122,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -122,18 +133,7 @@
       }
     },
     {
-      "field_name": "model",
-      "raw_value": "CE-1P3001G",
-      "normalized_value": "CE-1P3001G",
-      "evidence": {
-        "source_file": "DSS_GZES230100125901_combined-1.txt",
-        "page": "7",
-        "quote_or_summary": "Found model CE-1P3001G",
-        "confidence": "high"
-      }
-    },
-    {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P3001G-230-EU",
       "normalized_value": "CE-1P3001G-230-EU",
       "evidence": {
@@ -144,18 +144,7 @@
       }
     },
     {
-      "field_name": "model",
-      "raw_value": "CE-1P5001G",
-      "normalized_value": "CE-1P5001G",
-      "evidence": {
-        "source_file": "DSS_GZES230100125901_combined-1.txt",
-        "page": "7",
-        "quote_or_summary": "Found model CE-1P5001G",
-        "confidence": "high"
-      }
-    },
-    {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P5001G-230-EU",
       "normalized_value": "CE-1P5001G-230-EU",
       "evidence": {
@@ -166,18 +155,7 @@
       }
     },
     {
-      "field_name": "model",
-      "raw_value": "CE-1P6001G",
-      "normalized_value": "CE-1P6001G",
-      "evidence": {
-        "source_file": "DSS_GZES230100125901_combined-1.txt",
-        "page": "7",
-        "quote_or_summary": "Found model CE-1P6001G",
-        "confidence": "high"
-      }
-    },
-    {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P6001G-230-EU",
       "normalized_value": "CE-1P6001G-230-EU",
       "evidence": {
@@ -188,18 +166,7 @@
       }
     },
     {
-      "field_name": "model",
-      "raw_value": "CE-1P8001G",
-      "normalized_value": "CE-1P8001G",
-      "evidence": {
-        "source_file": "DSS_GZES230100125901_combined-1.txt",
-        "page": "7",
-        "quote_or_summary": "Found model CE-1P8001G",
-        "confidence": "high"
-      }
-    },
-    {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P8001G-230-EU",
       "normalized_value": "CE-1P8001G-230-EU",
       "evidence": {
@@ -216,12 +183,12 @@
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "8",
-        "quote_or_summary": "Found IP Rating IP67",
+        "quote_or_summary": "Found IP rating IP67",
         "confidence": "high"
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P13001G",
       "normalized_value": "CE-1P13001G",
       "evidence": {
@@ -232,7 +199,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P16001G",
       "normalized_value": "CE-1P16001G",
       "evidence": {
@@ -243,7 +210,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P18001G",
       "normalized_value": "CE-1P18001G",
       "evidence": {
@@ -254,7 +221,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G",
       "normalized_value": "CE-1P20001G",
       "evidence": {
@@ -276,7 +243,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P10001G-230-EU",
       "normalized_value": "CE-1P10001G-230-EU",
       "evidence": {
@@ -287,7 +254,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P13001G-230-EU",
       "normalized_value": "CE-1P13001G-230-EU",
       "evidence": {
@@ -298,7 +265,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P16001G-230-EU",
       "normalized_value": "CE-1P16001G-230-EU",
       "evidence": {
@@ -309,7 +276,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P18001G-230-EU",
       "normalized_value": "CE-1P18001G-230-EU",
       "evidence": {
@@ -320,7 +287,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -331,7 +298,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P3001G-230-EU",
       "normalized_value": "CE-1P3001G-230-EU",
       "evidence": {
@@ -342,7 +309,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P5001G-230-EU",
       "normalized_value": "CE-1P5001G-230-EU",
       "evidence": {
@@ -353,7 +320,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P6001G-230-EU",
       "normalized_value": "CE-1P6001G-230-EU",
       "evidence": {
@@ -364,7 +331,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P8001G-230-EU",
       "normalized_value": "CE-1P8001G-230-EU",
       "evidence": {
@@ -381,7 +348,7 @@
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "16",
-        "quote_or_summary": "Found IP Rating IP67",
+        "quote_or_summary": "Found IP rating IP67",
         "confidence": "high"
       }
     },
@@ -392,7 +359,7 @@
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "20",
-        "quote_or_summary": "Found IP Rating IP67",
+        "quote_or_summary": "Found IP rating IP67",
         "confidence": "high"
       }
     },
@@ -498,11 +465,11 @@
     {
       "field_name": "ip_rating",
       "raw_value": "IP 67",
-      "normalized_value": "IP 67",
+      "normalized_value": "IP67",
       "evidence": {
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "38",
-        "quote_or_summary": "Found IP Rating IP 67",
+        "quote_or_summary": "Found IP rating IP 67",
         "confidence": "high"
       }
     },
@@ -518,7 +485,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P3001G-230",
       "normalized_value": "CE-1P3001G-230",
       "evidence": {
@@ -529,7 +496,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P5001G-230",
       "normalized_value": "CE-1P5001G-230",
       "evidence": {
@@ -540,7 +507,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P6001G-230",
       "normalized_value": "CE-1P6001G-230",
       "evidence": {
@@ -551,7 +518,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P10001G-230",
       "normalized_value": "CE-1P10001G-230",
       "evidence": {
@@ -562,7 +529,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P13001G-230",
       "normalized_value": "CE-1P13001G-230",
       "evidence": {
@@ -573,7 +540,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P16001G-230",
       "normalized_value": "CE-1P16001G-230",
       "evidence": {
@@ -584,7 +551,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P8001G-230",
       "normalized_value": "CE-1P8001G-230",
       "evidence": {
@@ -595,7 +562,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P18001G-230",
       "normalized_value": "CE-1P18001G-230",
       "evidence": {
@@ -606,7 +573,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230",
       "normalized_value": "CE-1P20001G-230",
       "evidence": {
@@ -617,7 +584,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -628,7 +595,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -639,7 +606,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -661,7 +628,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -672,7 +639,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -683,7 +650,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -694,7 +661,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -716,7 +683,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -727,7 +694,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P3001G-230-EU",
       "normalized_value": "CE-1P3001G-230-EU",
       "evidence": {
@@ -738,7 +705,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P5001G-230-EU",
       "normalized_value": "CE-1P5001G-230-EU",
       "evidence": {
@@ -749,7 +716,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P10001G-230-EU",
       "normalized_value": "CE-1P10001G-230-EU",
       "evidence": {
@@ -760,7 +727,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P13001G-230-EU",
       "normalized_value": "CE-1P13001G-230-EU",
       "evidence": {
@@ -771,7 +738,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P16001G-230-EU",
       "normalized_value": "CE-1P16001G-230-EU",
       "evidence": {
@@ -782,7 +749,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P18001G-230-EU",
       "normalized_value": "CE-1P18001G-230-EU",
       "evidence": {
@@ -793,7 +760,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
@@ -804,7 +771,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P6001G-230-EU",
       "normalized_value": "CE-1P6001G-230-EU",
       "evidence": {
@@ -815,7 +782,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P8001G-230-EU",
       "normalized_value": "CE-1P8001G-230-EU",
       "evidence": {
@@ -826,7 +793,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P10001G-230-EU",
       "normalized_value": "CE-1P10001G-230-EU",
       "evidence": {
@@ -837,7 +804,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P3001G-230-EU",
       "normalized_value": "CE-1P3001G-230-EU",
       "evidence": {
@@ -848,7 +815,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P5001G-230-EU",
       "normalized_value": "CE-1P5001G-230-EU",
       "evidence": {
@@ -859,7 +826,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P6001G-230-EU",
       "normalized_value": "CE-1P6001G-230-EU",
       "evidence": {
@@ -870,7 +837,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P8001G-230-EU",
       "normalized_value": "CE-1P8001G-230-EU",
       "evidence": {
@@ -881,7 +848,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P13001G-230-EU",
       "normalized_value": "CE-1P13001G-230-EU",
       "evidence": {
@@ -892,7 +859,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P16001G-230-EU",
       "normalized_value": "CE-1P16001G-230-EU",
       "evidence": {
@@ -903,7 +870,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P18001G-230-EU",
       "normalized_value": "CE-1P18001G-230-EU",
       "evidence": {
@@ -914,7 +881,7 @@
       }
     },
     {
-      "field_name": "model",
+      "field_name": "model_name",
       "raw_value": "CE-1P20001G-230-EU",
       "normalized_value": "CE-1P20001G-230-EU",
       "evidence": {
