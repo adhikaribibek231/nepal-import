@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from schemas import Conflict, ConflictMatrix, ExtractedFacts
+from src.schemas import Conflict, ConflictMatrix, ExtractedFacts
 
 
 SOURCE_A = "DSS_GZES230100125901_combined-1.txt"
@@ -95,7 +95,10 @@ def build_conflict_matrix(facts: ExtractedFacts) -> ConflictMatrix:
 
 
 def save_json(matrix: ConflictMatrix, output_path: str) -> None:
-    with open(output_path, "w", encoding="utf-8") as file:
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(path, "w", encoding="utf-8") as file:
         json.dump(matrix.model_dump(), file, indent=2, ensure_ascii=False)
 
 
@@ -121,7 +124,9 @@ def save_markdown(matrix: ConflictMatrix, output_path: str) -> None:
         lines.append("---")
         lines.append("")
 
-    Path(output_path).write_text("\n".join(lines), encoding="utf-8")
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

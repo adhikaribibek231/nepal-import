@@ -13,6 +13,18 @@ Sunbridge trading(fictional) needs a proper document draft that they can share w
 5. Generate a final review draft in Markdown (and optionally PDF).
 
 # how to run
+## Running the full pipeline
+```bash
+uv run python main.py
+```
+
+This will:
+
+1. Extract text from PDFs in `data/input/`
+2. Extract evidence-backed facts
+3. Generate NEPQA mapping
+4. Generate conflict matrix
+
 ## running text extraction
 ``` bash
 uv run python src/extract_text.py
@@ -100,7 +112,8 @@ To prioritize building the core pipeline, the following refinements are consciou
 * **Duplicate Mentions:** Identical facts found on different pages are intentionally preserved to maintain a complete log of evidence.
 
 
-Known Pipeline Issues (State Management)
-Overwritten Extraction Output: When running extract_facts.py manually on individual files, the target JSON file (outputs/extracted_facts.json) is completely overwritten. As a result, the output file only retains the data from whichever source was processed last.
+### Manual Script Caveat
 
-False Conflicts: Because the facts of the previous file are wiped out, downstream reconciliation scripts (reconcile.py and nepqa_checklist.py) will read the missing data from the second file as a conflict, displaying all its fields as "Not found".
+Use `uv run python main.py` for normal runs. It extracts facts from both source files before generating NEPQA mapping and conflict outputs.
+
+Running `src/extract_facts.py` manually still writes only its configured single source into `outputs/extracted_facts.json`, so downstream outputs may show the other source as missing.

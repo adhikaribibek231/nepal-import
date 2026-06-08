@@ -2,21 +2,23 @@
 
 ## IEC 61727:2004 certificate/test evidence should be provided.
 
-Status: `missing`
+Status: `evidence_found`
 
-Evidence: Not found in extracted facts.
+Evidence:
+- 188_1115.txt, page 1: Found standard IEC 61727:2004
 
-Notes: No extracted evidence found for field: standard
+Notes: Matched extracted field: standard
 
 ---
 
 ## IEC 62116:2014 islanding prevention test evidence should be provided.
 
-Status: `missing`
+Status: `evidence_found`
 
-Evidence: Not found in extracted facts.
+Evidence:
+- 188_1115.txt, page 1: Found standard IEC 62116:2014
 
-Notes: No extracted evidence found for field: standard
+Notes: Matched extracted field: standard
 
 ---
 
@@ -206,6 +208,9 @@ Notes: No extracted evidence found for field: power_factor
 Status: `evidence_found`
 
 Evidence:
+- 188_1115.txt, page 2: Found IP rating IP65
+- 188_1115.txt, page 3: Found IP rating IP65
+- 188_1115.txt, page 4: Found IP rating IP65
 - DSS_GZES230100125901_combined-1.txt, page 5: Found IP rating IP 67
 - DSS_GZES230100125901_combined-1.txt, page 7: Found IP rating IP67
 - DSS_GZES230100125901_combined-1.txt, page 8: Found IP rating IP67
@@ -249,11 +254,14 @@ Notes: No extracted evidence found for field: automatic_operation
 
 ## Inverter should have fan cooling or an appropriate heat sink to avoid excessive heating.
 
-Status: `missing`
+Status: `evidence_found`
 
-Evidence: Not found in extracted facts.
+Evidence:
+- 188_1115.txt, page 2: Found cooling_method from labeled field 'Cooling method'
+- 188_1115.txt, page 3: Found cooling_method from labeled field 'Cooling method'
+- 188_1115.txt, page 4: Found cooling_method from labeled field 'Cooling method'
 
-Notes: No extracted evidence found for field: cooling_method
+Notes: Matched extracted field: cooling_method
 
 ---
 
@@ -283,6 +291,26 @@ Notes: Matched extracted field: manufacturer
 Status: `evidence_found`
 
 Evidence:
+- 188_1115.txt, page 1: Found model SUN-10K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-12K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-15K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-3K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-4K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-5K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-6K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-7K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-8K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 1: Found model SUN-9K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 2: Found model SUN-3K-G06P3
+- 188_1115.txt, page 2: Found model SUN-4K-G06P3
+- 188_1115.txt, page 2: Found model SUN-5K-G06P3
+- 188_1115.txt, page 2: Found model SUN-6K-G06P3
+- 188_1115.txt, page 3: Found model SUN-10K-G06P3
+- 188_1115.txt, page 3: Found model SUN-7K-G06P3
+- 188_1115.txt, page 3: Found model SUN-8K-G06P3
+- 188_1115.txt, page 3: Found model SUN-9K-G06P3
+- 188_1115.txt, page 4: Found model SUN-12K-G06P3-EU-AM2-P1
+- 188_1115.txt, page 4: Found model SUN-15K-G06P3-EU-AM2-P1
 - DSS_GZES230100125901_combined-1.txt, page 4: Found model CE-1P20001G-230-EU
 - DSS_GZES230100125901_combined-1.txt, page 7: Found model CE-1P10001G-230-EU
 - DSS_GZES230100125901_combined-1.txt, page 7: Found model CE-1P13001G-230-EU

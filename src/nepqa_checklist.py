@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from schemas import ExtractedFacts, RequirementMapping, ReviewMapping
+from src.schemas import ExtractedFacts, RequirementMapping, ReviewMapping
 
 
 NEPQA_REQUIREMENTS = [
@@ -342,7 +342,10 @@ def build_review_mapping(facts: ExtractedFacts) -> ReviewMapping:
 
 
 def save_json(mapping: ReviewMapping, output_path: str) -> None:
-    with open(output_path, "w", encoding="utf-8") as file:
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(path, "w", encoding="utf-8") as file:
         json.dump(mapping.model_dump(), file, indent=2, ensure_ascii=False)
 
 
@@ -373,7 +376,9 @@ def save_markdown(mapping: ReviewMapping, output_path: str) -> None:
         lines.append("---")
         lines.append("")
 
-    Path(output_path).write_text("\n".join(lines), encoding="utf-8")
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

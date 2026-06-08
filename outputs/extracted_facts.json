@@ -1,6 +1,446 @@
 {
   "facts": [
     {
+      "field_name": "certificate_number",
+      "raw_value": "PCS-24-1022",
+      "normalized_value": "PCS-24-1022",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found certificate_number from labeled field 'Certificate Number'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "issue_date",
+      "raw_value": "2024-03-26",
+      "normalized_value": "2024-03-26",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found issue_date from labeled field 'Date of Original Issue'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "expiry_date",
+      "raw_value": "2027-03-25",
+      "normalized_value": "2027-03-25",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found expiry_date from labeled field 'Date of Expiry'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "certificate_holder",
+      "raw_value": "NingBo Deye Inverter Technology Co., Ltd.",
+      "normalized_value": "NingBo Deye Inverter Technology Co., Ltd.",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found certificate_holder from labeled field 'Certificate Holder'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "product_type",
+      "raw_value": "Grid-connected PV Inverter",
+      "normalized_value": "Grid-connected PV Inverter",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found product_type from labeled field 'Product'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 17065:2012",
+      "normalized_value": "IEC 17065:2012",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found standard IEC 17065:2012",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 61727:2004",
+      "normalized_value": "IEC 61727:2004",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found standard IEC 61727:2004",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "standard",
+      "raw_value": "IEC 62116:2014",
+      "normalized_value": "IEC 62116:2014",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found standard IEC 62116:2014",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-10K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-10K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-10K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-12K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-12K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-12K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-15K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-15K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-15K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-3K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-3K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-3K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-4K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-4K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-4K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-5K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-5K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-5K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-6K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-6K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-6K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-7K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-7K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-7K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-8K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-8K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-8K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-9K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-9K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "1",
+        "quote_or_summary": "Found model SUN-9K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "certificate_number",
+      "raw_value": "PCS-24-1022",
+      "normalized_value": "PCS-24-1022",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found certificate_number from labeled field 'Certificate Number'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "protective_class",
+      "raw_value": "Class I",
+      "normalized_value": "Class I",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found protective_class from labeled field 'Protective class'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "cooling_method",
+      "raw_value": "Free cooling",
+      "normalized_value": "Free cooling",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found cooling_method from labeled field 'Cooling method'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
+      "raw_value": "IP65",
+      "normalized_value": "IP65",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found IP rating IP65",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-3K-G06P3",
+      "normalized_value": "SUN-3K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found model SUN-3K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-4K-G06P3",
+      "normalized_value": "SUN-4K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found model SUN-4K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-5K-G06P3",
+      "normalized_value": "SUN-5K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found model SUN-5K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-6K-G06P3",
+      "normalized_value": "SUN-6K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "2",
+        "quote_or_summary": "Found model SUN-6K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "certificate_number",
+      "raw_value": "PCS-24-1022",
+      "normalized_value": "PCS-24-1022",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found certificate_number from labeled field 'Certificate Number'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "protective_class",
+      "raw_value": "Class I",
+      "normalized_value": "Class I",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found protective_class from labeled field 'Protective class'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "cooling_method",
+      "raw_value": "Free cooling",
+      "normalized_value": "Free cooling",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found cooling_method from labeled field 'Cooling method'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
+      "raw_value": "IP65",
+      "normalized_value": "IP65",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found IP rating IP65",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-10K-G06P3",
+      "normalized_value": "SUN-10K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found model SUN-10K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-7K-G06P3",
+      "normalized_value": "SUN-7K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found model SUN-7K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-8K-G06P3",
+      "normalized_value": "SUN-8K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found model SUN-8K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-9K-G06P3",
+      "normalized_value": "SUN-9K-G06P3",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "3",
+        "quote_or_summary": "Found model SUN-9K-G06P3",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "certificate_number",
+      "raw_value": "PCS-24-1022",
+      "normalized_value": "PCS-24-1022",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "4",
+        "quote_or_summary": "Found certificate_number from labeled field 'Certificate Number'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "protective_class",
+      "raw_value": "Class I",
+      "normalized_value": "Class I",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "4",
+        "quote_or_summary": "Found protective_class from labeled field 'Protective class'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "cooling_method",
+      "raw_value": "Free cooling",
+      "normalized_value": "Free cooling",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "4",
+        "quote_or_summary": "Found cooling_method from labeled field 'Cooling method'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_rating",
+      "raw_value": "IP65",
+      "normalized_value": "IP65",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "4",
+        "quote_or_summary": "Found IP rating IP65",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-12K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-12K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "4",
+        "quote_or_summary": "Found model SUN-12K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "model_name",
+      "raw_value": "SUN-15K-G06P3-EU-AM2-P1",
+      "normalized_value": "SUN-15K-G06P3-EU-AM2-P1",
+      "evidence": {
+        "source_file": "188_1115.txt",
+        "page": "4",
+        "quote_or_summary": "Found model SUN-15K-G06P3-EU-AM2-P1",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "report_number",
       "raw_value": "GZES230100125901",
       "normalized_value": "GZES230100125901",

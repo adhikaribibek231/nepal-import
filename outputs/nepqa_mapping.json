@@ -2,15 +2,29 @@
   "mappings": [
     {
       "requirement": "IEC 61727:2004 certificate/test evidence should be provided.",
-      "status": "missing",
-      "evidence": [],
-      "notes": "No extracted evidence found for field: standard"
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found standard IEC 61727:2004",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: standard"
     },
     {
       "requirement": "IEC 62116:2014 islanding prevention test evidence should be provided.",
-      "status": "missing",
-      "evidence": [],
-      "notes": "No extracted evidence found for field: standard"
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found standard IEC 62116:2014",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: standard"
     },
     {
       "requirement": "IEC 62891:2020 MPPT efficiency evidence should be provided.",
@@ -132,6 +146,24 @@
       "status": "evidence_found",
       "evidence": [
         {
+          "source_file": "188_1115.txt",
+          "page": "2",
+          "quote_or_summary": "Found IP rating IP65",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "3",
+          "quote_or_summary": "Found IP rating IP65",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "4",
+          "quote_or_summary": "Found IP rating IP65",
+          "confidence": "high"
+        },
+        {
           "source_file": "DSS_GZES230100125901_combined-1.txt",
           "page": "5",
           "quote_or_summary": "Found IP rating IP 67",
@@ -190,9 +222,28 @@
     },
     {
       "requirement": "Inverter should have fan cooling or an appropriate heat sink to avoid excessive heating.",
-      "status": "missing",
-      "evidence": [],
-      "notes": "No extracted evidence found for field: cooling_method"
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "188_1115.txt",
+          "page": "2",
+          "quote_or_summary": "Found cooling_method from labeled field 'Cooling method'",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "3",
+          "quote_or_summary": "Found cooling_method from labeled field 'Cooling method'",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "4",
+          "quote_or_summary": "Found cooling_method from labeled field 'Cooling method'",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: cooling_method"
     },
     {
       "requirement": "PV inverter warranty should be at least 5 years.",
@@ -217,6 +268,126 @@
       "requirement": "Inverter label should include brand, model, and type.",
       "status": "evidence_found",
       "evidence": [
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-10K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-12K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-15K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-3K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-4K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-5K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-6K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-7K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-8K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "1",
+          "quote_or_summary": "Found model SUN-9K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "2",
+          "quote_or_summary": "Found model SUN-3K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "2",
+          "quote_or_summary": "Found model SUN-4K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "2",
+          "quote_or_summary": "Found model SUN-5K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "2",
+          "quote_or_summary": "Found model SUN-6K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "3",
+          "quote_or_summary": "Found model SUN-10K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "3",
+          "quote_or_summary": "Found model SUN-7K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "3",
+          "quote_or_summary": "Found model SUN-8K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "3",
+          "quote_or_summary": "Found model SUN-9K-G06P3",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "4",
+          "quote_or_summary": "Found model SUN-12K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
+        {
+          "source_file": "188_1115.txt",
+          "page": "4",
+          "quote_or_summary": "Found model SUN-15K-G06P3-EU-AM2-P1",
+          "confidence": "high"
+        },
         {
           "source_file": "DSS_GZES230100125901_combined-1.txt",
           "page": "4",

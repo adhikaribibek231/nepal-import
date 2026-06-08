@@ -1,8 +1,9 @@
 import json
 import os
 import re
+from pathlib import Path
 
-from schemas import Evidence, ExtractedFacts, ProductFact
+from src.schemas import Evidence, ExtractedFacts, ProductFact
 
 REGEX_FIELDS = {
     "standard",
@@ -107,7 +108,7 @@ def deduplicate_facts(facts: list[ProductFact]) -> list[ProductFact]:
     return unique_facts
 
 
-def process_file(input_path: str, output_json_path: str) -> None:
+def extract_facts_from_file(input_path: str | Path) -> list[ProductFact]:
     filename = os.path.basename(input_path)
 
     with open(input_path, "r", encoding="utf-8") as file:
@@ -200,15 +201,30 @@ def process_file(input_path: str, output_json_path: str) -> None:
 
         facts_list.extend(llm_facts)
 
-    extracted_facts = ExtractedFacts(facts=deduplicate_facts(facts_list))
+    return facts_list
 
-    with open(output_json_path, "w", encoding="utf-8") as json_file:
+
+def process_files(input_paths: list[str | Path], output_json_path: str | Path) -> None:
+    facts_list: list[ProductFact] = []
+
+    for input_path in input_paths:
+        facts_list.extend(extract_facts_from_file(input_path))
+
+    extracted_facts = ExtractedFacts(facts=deduplicate_facts(facts_list))
+    output_path = Path(output_json_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as json_file:
         json.dump(
             extracted_facts.model_dump(),
             json_file,
             indent=2,
             ensure_ascii=False,
         )
+
+
+def process_file(input_path: str | Path, output_json_path: str | Path) -> None:
+    process_files([input_path], output_json_path)
 
 
 if __name__ == "__main__":
