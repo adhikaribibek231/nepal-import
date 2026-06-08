@@ -23,6 +23,17 @@
       }
     },
     {
+      "field_name": "applicant",
+      "raw_value": "Zhejiang CHISAGE New Energy Technology Co., Ltd",
+      "normalized_value": "Zhejiang CHISAGE New Energy Technology Co., Ltd",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "1",
+        "quote_or_summary": "Found applicant from labeled field 'Applicant’s name'",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "standard",
       "raw_value": "IEC 62109-1:2010",
       "normalized_value": "IEC 62109-1:2010",
@@ -30,6 +41,28 @@
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "1",
         "quote_or_summary": "Found standard IEC 62109-1:2010",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "manufacturer",
+      "raw_value": "Zhejiang CHISAGE New Energy Technology Co., Ltd",
+      "normalized_value": "Zhejiang CHISAGE New Energy Technology Co., Ltd",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "2",
+        "quote_or_summary": "Found manufacturer from labeled field 'Manufacturer'",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "product_type",
+      "raw_value": "Single phase inverter",
+      "normalized_value": "Single phase inverter",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "2",
+        "quote_or_summary": "Found product_type from labeled field 'Test item description'",
         "confidence": "high"
       }
     },
@@ -63,6 +96,17 @@
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "5",
         "quote_or_summary": "Found IP rating IP 67",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "factory",
+      "raw_value": "NingBo Deye Inverter Technology Co., Ltd.",
+      "normalized_value": "NingBo Deye Inverter Technology Co., Ltd.",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "6",
+        "quote_or_summary": "Found factory from labeled field 'Name and address of factory (ies)'",
         "confidence": "high"
       }
     },

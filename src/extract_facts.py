@@ -4,7 +4,6 @@ import re
 
 from schemas import Evidence, ExtractedFacts, ProductFact
 
-
 REGEX_FIELDS = {
     "standard",
     "ip_rating",
@@ -25,6 +24,14 @@ LABELED_FIELDS = (
     ("Date of issue", "issue_date"),
     ("Date of Expiry", "expiry_date"),
     ("Date of Last Revision", "last_revision_date"),
+    ("Certificate Holder", "certificate_holder"),
+    ("Applicant’s name", "applicant"),
+    ("Manufacturer", "manufacturer"),
+    ("Name and address of factory (ies)", "factory"),
+    ("Product", "product_type"),
+    ("Test item description", "product_type"),
+    ("Protective class", "protective_class"),
+    ("Cooling method", "cooling_method"),
 )
 
 
