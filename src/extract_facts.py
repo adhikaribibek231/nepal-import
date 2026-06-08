@@ -10,6 +10,11 @@ def extract_standards(text: str) -> list[str]:
     return sorted(set(re.findall(pattern, text)))
 
 
+def extract_ip_ratings(text: str) -> list[str]:
+    pattern = r"\bIP\d{2}"
+    return sorted(set(re.findall(pattern, text)))
+
+
 def process_file(input_path: str, output_json_path: str):
     filename = os.path.basename(input_path)
 
@@ -25,7 +30,7 @@ def process_file(input_path: str, output_json_path: str):
         page_text = pages[i + 1]
 
         standards = extract_standards(page_text)
-
+        ip_rating = extract_ip_ratings(page_text)
         for standard in standards:
             facts_list.append(
                 ProductFact(
@@ -36,6 +41,20 @@ def process_file(input_path: str, output_json_path: str):
                         source_file=filename,
                         page=page_num,
                         quote_or_summary=f"Found standard {standard}",
+                        confidence="high",
+                    ),
+                )
+            )
+        for rating in ip_rating:
+            facts_list.append(
+                ProductFact(
+                    field_name="ip_rating",
+                    raw_value=rating,
+                    normalized_value=rating,
+                    evidence=Evidence(
+                        source_file=filename,
+                        page=page_num,
+                        quote_or_summary=f"Found IP Rating {rating}",
                         confidence="high",
                     ),
                 )

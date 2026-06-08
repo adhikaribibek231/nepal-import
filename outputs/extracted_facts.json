@@ -23,6 +23,28 @@
       }
     },
     {
+      "field_name": "ip_ratings",
+      "raw_value": "IP67",
+      "normalized_value": "IP67",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found IP Rating IP67",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_ratings",
+      "raw_value": "IP67",
+      "normalized_value": "IP67",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "8",
+        "quote_or_summary": "Found IP Rating IP67",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "standard",
       "raw_value": "IEC 60417",
       "normalized_value": "IEC 60417",
@@ -30,6 +52,28 @@
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "11",
         "quote_or_summary": "Found standard IEC 60417",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_ratings",
+      "raw_value": "IP67",
+      "normalized_value": "IP67",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "16",
+        "quote_or_summary": "Found IP Rating IP67",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "ip_ratings",
+      "raw_value": "IP67",
+      "normalized_value": "IP67",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "20",
+        "quote_or_summary": "Found IP Rating IP67",
         "confidence": "high"
       }
     },
