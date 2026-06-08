@@ -1,0 +1,602 @@
+{
+  "mappings": [
+    {
+      "requirement": "IEC 61727:2004 certificate/test evidence should be provided.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: standard"
+    },
+    {
+      "requirement": "IEC 62116:2014 islanding prevention test evidence should be provided.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: standard"
+    },
+    {
+      "requirement": "IEC 62891:2020 MPPT efficiency evidence should be provided.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: standard"
+    },
+    {
+      "requirement": "IEC 62109-1:2010 safety evidence should be provided.",
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "1",
+          "quote_or_summary": "Found standard IEC 62109-1:2010",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: standard"
+    },
+    {
+      "requirement": "IEC 62109-2:2011 inverter safety evidence should be provided.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: standard"
+    },
+    {
+      "requirement": "Certification body or lab should be IECEE/IECRE listed with PV inverter testing scope.",
+      "status": "not_assessed",
+      "evidence": [],
+      "notes": "This item requires manual review or source verification."
+    },
+    {
+      "requirement": "Local importer should provide an agreement with the principal inverter manufacturer stating warranty period.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: warranty"
+    },
+    {
+      "requirement": "Catalogue and technical datasheet of the PV inverter should be provided.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: datasheet"
+    },
+    {
+      "requirement": "PV inverter should match grid voltage, frequency, phase angle, and phase sequence.",
+      "status": "not_assessed",
+      "evidence": [],
+      "notes": "This item requires manual review or source verification."
+    },
+    {
+      "requirement": "THD, flicker, DC injection, voltage range, frequency range, power factor range, and anti-islanding should follow Nepal grid code.",
+      "status": "not_assessed",
+      "evidence": [],
+      "notes": "This item requires manual review or source verification."
+    },
+    {
+      "requirement": "Rated AC output voltage should be 400+/-10% VAC three-phase or 230+/-10% VAC single-phase.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: ac_output_voltage"
+    },
+    {
+      "requirement": "Output frequency should be 50Hz +/- 2.5%.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: frequency"
+    },
+    {
+      "requirement": "MPPT input efficiency should be at least 95%.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: mppt_efficiency"
+    },
+    {
+      "requirement": "Inverter efficiency should be at least 95% up to 5kVA and at least 97% above 5kVA for transformerless topology.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: inverter_efficiency"
+    },
+    {
+      "requirement": "Euro efficiency should be at least 94% up to 5kVA and at least 96% above 5kVA for transformerless topology, with efficiency curve.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: euro_efficiency"
+    },
+    {
+      "requirement": "Transformer topology inverter efficiency should be at least 90%.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: inverter_efficiency"
+    },
+    {
+      "requirement": "No-load loss should be less than 0.5% of rated power for transformerless topology.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: no_load_loss"
+    },
+    {
+      "requirement": "No-load loss should be less than 1.5% of rated power for transformer topology.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: no_load_loss"
+    },
+    {
+      "requirement": "Total harmonic distortion should be less than 5% at full load.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: thd"
+    },
+    {
+      "requirement": "Power factor should be greater than 0.99 at nominal power and adjustable from 0.8 leading to 0.8 lagging.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: power_factor"
+    },
+    {
+      "requirement": "Ingress protection should be at least IP65 according to IEC 60529.",
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "5",
+          "quote_or_summary": "Found IP rating IP 67",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found IP rating IP67",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "8",
+          "quote_or_summary": "Found IP rating IP67",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "16",
+          "quote_or_summary": "Found IP rating IP67",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "20",
+          "quote_or_summary": "Found IP rating IP67",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "38",
+          "quote_or_summary": "Found IP rating IP 67",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: ip_rating"
+    },
+    {
+      "requirement": "Inverter should have built-in meter and data logger for external user interface monitoring.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: data_logger"
+    },
+    {
+      "requirement": "Inverter should include DC reverse polarity, grid fault, and lightning feeder protection.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: protection_features"
+    },
+    {
+      "requirement": "Inverter should support automatic wake-up, synchronization, and shutdown.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: automatic_operation"
+    },
+    {
+      "requirement": "Inverter should have fan cooling or an appropriate heat sink to avoid excessive heating.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: cooling_method"
+    },
+    {
+      "requirement": "PV inverter warranty should be at least 5 years.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: warranty"
+    },
+    {
+      "requirement": "Inverter label should include manufacturer name.",
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "2",
+          "quote_or_summary": "Found manufacturer from labeled field 'Manufacturer'",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: manufacturer"
+    },
+    {
+      "requirement": "Inverter label should include brand, model, and type.",
+      "status": "evidence_found",
+      "evidence": [
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "4",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P10001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P13001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P16001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P18001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P3001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P5001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P6001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "7",
+          "quote_or_summary": "Found model CE-1P8001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "8",
+          "quote_or_summary": "Found model CE-1P13001G",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "8",
+          "quote_or_summary": "Found model CE-1P16001G",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "8",
+          "quote_or_summary": "Found model CE-1P18001G",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "8",
+          "quote_or_summary": "Found model CE-1P20001G",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P10001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P13001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P16001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P18001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P3001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P5001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P6001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "11",
+          "quote_or_summary": "Found model CE-1P8001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "46",
+          "quote_or_summary": "Found model CE-1P3001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "46",
+          "quote_or_summary": "Found model CE-1P5001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "46",
+          "quote_or_summary": "Found model CE-1P6001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "47",
+          "quote_or_summary": "Found model CE-1P10001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "47",
+          "quote_or_summary": "Found model CE-1P13001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "47",
+          "quote_or_summary": "Found model CE-1P16001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "47",
+          "quote_or_summary": "Found model CE-1P8001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "48",
+          "quote_or_summary": "Found model CE-1P18001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "48",
+          "quote_or_summary": "Found model CE-1P20001G-230",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "49",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "51",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "53",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "56",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "57",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "58",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "59",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "60",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "68",
+          "quote_or_summary": "Found model CE-1P3001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "68",
+          "quote_or_summary": "Found model CE-1P5001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P10001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P13001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P16001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P18001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P6001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "69",
+          "quote_or_summary": "Found model CE-1P8001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "70",
+          "quote_or_summary": "Found model CE-1P10001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "70",
+          "quote_or_summary": "Found model CE-1P3001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "70",
+          "quote_or_summary": "Found model CE-1P5001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "70",
+          "quote_or_summary": "Found model CE-1P6001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "70",
+          "quote_or_summary": "Found model CE-1P8001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "71",
+          "quote_or_summary": "Found model CE-1P13001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "71",
+          "quote_or_summary": "Found model CE-1P16001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "71",
+          "quote_or_summary": "Found model CE-1P18001G-230-EU",
+          "confidence": "high"
+        },
+        {
+          "source_file": "DSS_GZES230100125901_combined-1.txt",
+          "page": "71",
+          "quote_or_summary": "Found model CE-1P20001G-230-EU",
+          "confidence": "high"
+        }
+      ],
+      "notes": "Matched extracted field: model_name"
+    },
+    {
+      "requirement": "Inverter label should include rated power in Watt or VA.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: rated_power"
+    },
+    {
+      "requirement": "Inverter label should include input and output voltage in Volt and frequency in Hz.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: voltage_frequency_label"
+    },
+    {
+      "requirement": "Inverter label should include maximum input voltage.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: max_input_voltage"
+    },
+    {
+      "requirement": "Inverter label should include MPPT voltage range.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: mppt_voltage_range"
+    },
+    {
+      "requirement": "Inverter label should include serial number.",
+      "status": "missing",
+      "evidence": [],
+      "notes": "No extracted evidence found for field: serial_number"
+    }
+  ]
+}
