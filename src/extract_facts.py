@@ -10,12 +10,7 @@ REGEX_FIELDS = {
     "model_name",
 }
 
-LLM_FIELDS = {
-    "manufacturer",
-    "factory",
-    "applicant",
-    "certificate_holder",
-}
+LLM_FIELDS: set[str] = set()
 
 LABELED_FIELDS = (
     ("Certificate Number", "certificate_number"),
@@ -27,6 +22,7 @@ LABELED_FIELDS = (
     ("Certificate Holder", "certificate_holder"),
     ("Applicant’s name", "applicant"),
     ("Manufacturer", "manufacturer"),
+    ("Factory", "factory"),
     ("Name and address of factory (ies)", "factory"),
     ("Product", "product_type"),
     ("Test item description", "product_type"),
@@ -59,10 +55,21 @@ def extract_models(text: str) -> list[str]:
 
 
 def extract_labeled_field(text: str, label: str) -> str | None:
-    pattern = rf"(?im)^\s*{re.escape(label)}[\s.]*:\s*(?P<value>[^\r\n]*)"
-    match = re.search(pattern, text)
+    label_pattern = re.escape(label)
+    patterns = (
+        rf"(?im)^\s*{label_pattern}[\s.]*:\s*(?P<value>[^\r\n]*)",
+        rf"(?im)^\s*{label_pattern}[ \t]{{2,}}(?P<value>[^\r\n]*)",
+    )
 
-    if not match:
+    match = None
+
+    for pattern in patterns:
+        match = re.search(pattern, text)
+
+        if match:
+            break
+
+    if match is None:
         return None
 
     value = match.group("value").strip()

@@ -111,6 +111,17 @@
       }
     },
     {
+      "field_name": "protective_class",
+      "raw_value": "Class I",
+      "normalized_value": "Class I",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "7",
+        "quote_or_summary": "Found protective_class from labeled field 'Protective class'",
+        "confidence": "high"
+      }
+    },
+    {
       "field_name": "ip_rating",
       "raw_value": "IP67",
       "normalized_value": "IP67",
@@ -217,6 +228,17 @@
         "source_file": "DSS_GZES230100125901_combined-1.txt",
         "page": "7",
         "quote_or_summary": "Found model CE-1P8001G-230-EU",
+        "confidence": "high"
+      }
+    },
+    {
+      "field_name": "protective_class",
+      "raw_value": "Class I",
+      "normalized_value": "Class I",
+      "evidence": {
+        "source_file": "DSS_GZES230100125901_combined-1.txt",
+        "page": "8",
+        "quote_or_summary": "Found protective_class from labeled field 'Protective class'",
         "confidence": "high"
       }
     },
