@@ -98,3 +98,9 @@ To prioritize building the core pipeline, the following refinements are consciou
 * **Standards Classification:** Every `IEC` standard is logged, including page headers. Differentiating between a primary certification standard and a referenced standard is postponed.
 * **String Variation:** The current regex strictly targets pure `IEC` formats. Handling compound prefixes like `IEC/EN` or mapping them to common base standards is deferred to the normalization phase.
 * **Duplicate Mentions:** Identical facts found on different pages are intentionally preserved to maintain a complete log of evidence.
+
+
+Known Pipeline Issues (State Management)
+Overwritten Extraction Output: When running extract_facts.py manually on individual files, the target JSON file (outputs/extracted_facts.json) is completely overwritten. As a result, the output file only retains the data from whichever source was processed last.
+
+False Conflicts: Because the facts of the previous file are wiped out, downstream reconciliation scripts (reconcile.py and nepqa_checklist.py) will read the missing data from the second file as a conflict, displaying all its fields as "Not found".

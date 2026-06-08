@@ -1,0 +1,44 @@
+{
+  "conflicts": [
+    {
+      "field_name": "manufacturer",
+      "source_a": "Zhejiang CHISAGE New Energy Technology Co., Ltd",
+      "source_b": "Not found",
+      "status": "missing_in_one_source",
+      "issue": "manufacturer was found in Source A but not in Source B.",
+      "decision": "Needs confirmation if this affects the imported product identity."
+    },
+    {
+      "field_name": "product_type",
+      "source_a": "Single phase inverter",
+      "source_b": "Not found",
+      "status": "missing_in_one_source",
+      "issue": "product_type was found in Source A but not in Source B.",
+      "decision": "Needs confirmation if this affects the imported product identity."
+    },
+    {
+      "field_name": "standard",
+      "source_a": "IEC 60309, IEC 60364-1, IEC 60364-5-54, IEC 60417, IEC 60529, IEC 60664, IEC 60664-1, IEC 60707, IEC 60755, IEC 60990, IEC 62020, IEC 62109, IEC 62109-1:2010, IEC 62852",
+      "source_b": "Not found",
+      "status": "missing_in_one_source",
+      "issue": "standard was found in Source A but not in Source B.",
+      "decision": "Needs confirmation if this affects the imported product identity."
+    },
+    {
+      "field_name": "model_name",
+      "source_a": "CE-1P10001G-230, CE-1P10001G-230-EU, CE-1P13001G, CE-1P13001G-230, CE-1P13001G-230-EU, CE-1P16001G, CE-1P16001G-230, CE-1P16001G-230-EU, CE-1P18001G, CE-1P18001G-230, CE-1P18001G-230-EU, CE-1P20001G, CE-1P20001G-230, CE-1P20001G-230-EU, CE-1P3001G-230, CE-1P3001G-230-EU, CE-1P5001G-230, CE-1P5001G-230-EU, CE-1P6001G-230, CE-1P6001G-230-EU, CE-1P8001G-230, CE-1P8001G-230-EU",
+      "source_b": "Not found",
+      "status": "missing_in_one_source",
+      "issue": "model_name was found in Source A but not in Source B.",
+      "decision": "Needs confirmation if this affects the imported product identity."
+    },
+    {
+      "field_name": "ip_rating",
+      "source_a": "IP67",
+      "source_b": "Not found",
+      "status": "missing_in_one_source",
+      "issue": "ip_rating was found in Source A but not in Source B.",
+      "decision": "Needs confirmation if this affects the imported product identity."
+    }
+  ]
+}
