@@ -11,4 +11,9 @@ iii. map facts to nepal import review expectations
 iv. flag missing and mismatched information
 v.generate a final draft, pdf or md.
 
+# how to run
+## running text extraction
+``` bash
+uv run python src/extract_text.py
+```
 
