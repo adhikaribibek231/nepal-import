@@ -20,6 +20,7 @@ from src.reconcile import (
 def main() -> None:
     project_root = Path(__file__).resolve().parent
     output_dir = project_root / "outputs"
+    review_drafts_dir = output_dir / "review_drafts"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     input_pdfs = [
@@ -72,7 +73,7 @@ def main() -> None:
         facts_path=str(output_dir / "extracted_facts.json"),
         mapping_path=str(output_dir / "nepqa_mapping.json"),
         conflict_path=str(output_dir / "conflict_matrix.json"),
-        output_path=str(output_dir / "nepal_import_review_draft.md"),
+        output_path=str(review_drafts_dir / "nepal_import_review_draft.md"),
     )
 
     print("6. Generating client-facing final draft...")
@@ -80,7 +81,7 @@ def main() -> None:
         facts_path=str(output_dir / "extracted_facts.json"),
         mapping_path=str(output_dir / "nepqa_mapping.json"),
         conflict_path=str(output_dir / "conflict_matrix.json"),
-        output_path=str(output_dir / "nepal_import_review_final_draft.md"),
+        output_path=str(review_drafts_dir / "nepal_import_review_final_draft.md"),
     )
 
     print("Pipeline complete.")

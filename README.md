@@ -157,8 +157,8 @@ outputs/nepqa_mapping.json
 outputs/nepqa_mapping.md
 outputs/conflict_matrix.json
 outputs/conflict_matrix.md
-outputs/nepal_import_review_draft.md
-outputs/nepal_import_review_final_draft.md
+outputs/review_drafts/nepal_import_review_draft.md
+outputs/review_drafts/nepal_import_review_final_draft.md
 ```
 
 What they mean:
@@ -167,8 +167,8 @@ What they mean:
 * `outputs/extracted_facts.json` contains structured facts with evidence references.
 * `outputs/nepqa_mapping.md` shows which NEPQA-style review items have evidence, are missing, or need manual review.
 * `outputs/conflict_matrix.md` shows mismatches between the two source documents.
-* `outputs/nepal_import_review_draft.md` is the mechanical draft generated from the structured outputs.
-* `outputs/nepal_import_review_final_draft.md` is the cleaner draft intended for SunBridge Trading.
+* `outputs/review_drafts/nepal_import_review_draft.md` is the mechanical draft generated from the structured outputs.
+* `outputs/review_drafts/nepal_import_review_final_draft.md` is the cleaner draft intended for SunBridge Trading.
 
 ---
 
@@ -190,8 +190,13 @@ nepal-import/
 │   ├── nepqa_mapping.md
 │   ├── conflict_matrix.json
 │   ├── conflict_matrix.md
-│   ├── nepal_import_review_draft.md
-│   └── nepal_import_review_final_draft.md
+│   └── review_drafts/
+│       ├── nepal_import_review_draft.md
+│       ├── nepal_import_review_draft_v1.md
+│       ├── nepal_import_review_draft_v2.md
+│       ├── nepal_import_review_draft_v3.md
+│       ├── nepal_import_review_draft_v4.md
+│       └── nepal_import_review_final_draft.md
 ├── src/
 │   ├── extract_text.py
 │   ├── extract_facts.py
@@ -488,7 +493,7 @@ Main improvement:
 The current final draft is:
 
 ```text
-outputs/nepal_import_review_final_draft.md
+outputs/review_drafts/nepal_import_review_final_draft.md
 ```
 
 It is cleaner than the mechanical draft and is intended to be easier for SunBridge Trading or a local Nepal import agent to read.

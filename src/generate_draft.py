@@ -402,5 +402,5 @@ if __name__ == "__main__":
         facts_path="outputs/extracted_facts.json",
         mapping_path="outputs/nepqa_mapping.json",
         conflict_path="outputs/conflict_matrix.json",
-        output_path="outputs/nepal_import_review_draft.md",
+        output_path="outputs/review_drafts/nepal_import_review_draft.md",
     )
