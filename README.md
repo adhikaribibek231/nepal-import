@@ -1,5 +1,15 @@
 # Nepal Import Review Draft Generator
 
+## Final Output PDF
+
+The main file to check is the generated PDF:
+
+**[outputs/review_drafts/nepal_import_review_final_draft.pdf](outputs/review_drafts/nepal_import_review_final_draft.pdf)**
+
+After running the pipeline, open this PDF to review the client-facing final draft.
+
+---
+
 ## Problem
 
 SunBridge Trading, a fictional importer, needs a clear document draft that they can share with a Nepal import agent for review. The manufacturer sent two PDFs, but the content is not fully consistent. The goal of this project is to read those documents, extract useful information, compare it with common Nepal import review expectations, and generate a careful draft that points out what is found, what is missing, and what does not match.
@@ -121,27 +131,46 @@ The current full pipeline does the following:
 
 ## How to Run
 
-Run the full pipeline:
+Recommended way:
+
+1. Install `uv` once.
+
+For macOS or Linux:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+For Windows PowerShell:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+2. Run the full pipeline:
 
 ```bash
 uv run python main.py
 ```
 
-This will generate all main outputs.
+3. Open the generated PDF:
 
-You can also run text extraction separately:
+**[outputs/review_drafts/nepal_import_review_final_draft.pdf](outputs/review_drafts/nepal_import_review_final_draft.pdf)**
 
-```bash
-uv run python src/extract_text.py
-```
-
-For normal use, run:
+Without `uv`, use Python 3.12 or newer:
 
 ```bash
-uv run python main.py
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+python main.py
 ```
 
-because it processes both source documents together.
+Then open:
+
+**[outputs/review_drafts/nepal_import_review_final_draft.pdf](outputs/review_drafts/nepal_import_review_final_draft.pdf)**
+
+Both options process both source documents together and generate all main outputs.
 
 ---
 
@@ -152,6 +181,10 @@ Generated files are stored in:
 ```text
 outputs/
 ```
+
+The easiest file to check is the final generated PDF:
+
+**[outputs/review_drafts/nepal_import_review_final_draft.pdf](outputs/review_drafts/nepal_import_review_final_draft.pdf)**
 
 Main outputs:
 
