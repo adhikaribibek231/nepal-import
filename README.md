@@ -1,35 +1,320 @@
-# nepal-import
-# Nepal Import Review draft generator
+# Nepal Import Review Draft Generator
 
-# problem
-Sunbridge trading(fictional) needs a proper document draft that they can share with local agents that cover the necessary information about the imports. the manufacturer sent two pdfs with inconsistent content. from those two need to generate a combined helpful reference draft that Nepal import reviews usually want. If two sources do not match then that needs to be pointed out. 
+## Problem
 
-## Planned Pipeline
+SunBridge Trading, a fictional importer, needs a clear document draft that they can share with a Nepal import agent for review. The manufacturer sent two PDFs, but the content is not fully consistent. The goal of this project is to read those documents, extract useful information, compare it with common Nepal import review expectations, and generate a careful draft that points out what is found, what is missing, and what does not match.
 
-1. Extract text from the source PDFs.
-2. Extract important facts and attach source references(use llm for messy + simple regex extraction for obvious fields).
-3. Compare the facts against Nepal import review expectations.
-4. Identify missing, unclear, or conflicting information.
-5. Generate a final review draft in Markdown (and optionally PDF).
+This project does not certify compliance. It only prepares a review draft from the available documents.
 
-# how to run
-## Running the full pipeline
+---
+
+## What This Project Does
+
+The project takes two manufacturer PDF documents and creates a review package for Nepal import discussion.
+
+It focuses on:
+
+* product and model information
+* manufacturer, applicant, factory, and certificate holder information
+* test reports and certificate evidence
+* NEPQA-style review items for grid-connected PV inverters
+* mismatches between the two source documents
+* missing information that should be confirmed before import review
+
+The final output is a Markdown draft that SunBridge Trading could share with a local agent for an initial review.
+
+---
+
+## Main Finding
+
+The two manufacturer PDFs appear to describe different inverter model families.
+
+* `DSS_GZES230100125901_combined-1.pdf` appears to describe CHISAGE `CE-1P` single-phase inverter models.
+* `188_1115.pdf` appears to describe Deye `SUN-G06P3` grid-connected inverter models.
+
+Because of this, the exact inverter model being imported into Nepal needs to be confirmed before relying on the review draft.
+
+---
+
+## Inputs
+
+Source PDFs are stored in:
+
+```text
+data/input/
+```
+
+Input files:
+
+```text
+188_1115.pdf
+DSS_GZES230100125901_combined-1.pdf
+```
+
+Supporting notes are stored in:
+
+```text
+notes/
+```
+
+Important notes:
+
+```text
+notes/review_notes.md
+notes/source_observations.md
+```
+
+`review_notes.md` contains the initial understanding of the task and NEPQA relevance.
+
+`source_observations.md` contains manual observations from the two manufacturer PDFs before and during coding.
+
+---
+
+## Pipeline in Simple Words
+
+The pipeline works like this:
+
+```text
+PDF documents
+↓
+Text extraction
+↓
+Fact extraction
+↓
+NEPQA-style checklist mapping
+↓
+Conflict detection
+↓
+Review draft generation
+```
+
+In simple terms:
+
+1. The PDFs are converted into page-level text.
+2. Important facts are extracted from the text.
+3. Each fact keeps a source reference.
+4. The facts are compared with Nepal import review expectations.
+5. The two source documents are compared against each other.
+6. A review draft is generated from the structured results.
+
+The goal is to avoid loose summaries and keep the draft tied to evidence from the source documents.
+
+---
+
+## Current Pipeline
+
+The current full pipeline does the following:
+
+1. Extracts text from the source PDFs.
+2. Extracts evidence-backed facts using regex and labeled-field extraction.
+3. Maps extracted facts against NEPQA-style inverter review items.
+4. Detects missing, unclear, or conflicting information.
+5. Generates a mechanical review draft.
+6. Generates a cleaner client-facing final draft.
+
+---
+
+## How to Run
+
+Run the full pipeline:
+
 ```bash
 uv run python main.py
 ```
 
-This will:
+This will generate all main outputs.
 
-1. Extract text from PDFs in `data/input/`
-2. Extract evidence-backed facts
-3. Generate NEPQA mapping
-4. Generate conflict matrix
-5. Generate Nepal import review draft
+You can also run text extraction separately:
 
-## running text extraction
-``` bash
+```bash
 uv run python src/extract_text.py
 ```
+
+For normal use, run:
+
+```bash
+uv run python main.py
+```
+
+because it processes both source documents together.
+
+---
+
+## Outputs
+
+Generated files are stored in:
+
+```text
+outputs/
+```
+
+Main outputs:
+
+```text
+outputs/extracted_text/
+outputs/extracted_facts.json
+outputs/nepqa_mapping.json
+outputs/nepqa_mapping.md
+outputs/conflict_matrix.json
+outputs/conflict_matrix.md
+outputs/nepal_import_review_draft.md
+outputs/nepal_import_review_final_draft.md
+```
+
+What they mean:
+
+* `outputs/extracted_text/` contains text extracted from each PDF.
+* `outputs/extracted_facts.json` contains structured facts with evidence references.
+* `outputs/nepqa_mapping.md` shows which NEPQA-style review items have evidence, are missing, or need manual review.
+* `outputs/conflict_matrix.md` shows mismatches between the two source documents.
+* `outputs/nepal_import_review_draft.md` is the mechanical draft generated from the structured outputs.
+* `outputs/nepal_import_review_final_draft.md` is the cleaner draft intended for SunBridge Trading.
+
+---
+
+## Repository Structure
+
+```text
+nepal-import/
+├── data/
+│   └── input/
+│       ├── 188_1115.pdf
+│       └── DSS_GZES230100125901_combined-1.pdf
+├── notes/
+│   ├── review_notes.md
+│   └── source_observations.md
+├── outputs/
+│   ├── extracted_text/
+│   ├── extracted_facts.json
+│   ├── nepqa_mapping.json
+│   ├── nepqa_mapping.md
+│   ├── conflict_matrix.json
+│   ├── conflict_matrix.md
+│   ├── nepal_import_review_draft.md
+│   └── nepal_import_review_final_draft.md
+├── src/
+│   ├── extract_text.py
+│   ├── extract_facts.py
+│   ├── nepqa_checklist.py
+│   ├── reconcile.py
+│   ├── generate_draft.py
+│   ├── generate_final_draft.py
+│   └── schemas.py
+├── main.py
+├── README.md
+└── pyproject.toml
+```
+
+---
+
+## Important Files
+
+### `src/extract_text.py`
+
+Extracts page-level text from the source PDFs.
+
+The output keeps page markers like:
+
+```text
+--- PAGE 1 ---
+```
+
+This helps later when facts need source references.
+
+---
+
+### `src/extract_facts.py`
+
+Extracts important facts from the extracted text.
+
+Examples:
+
+* certificate number
+* report number
+* issue date
+* expiry date
+* certificate holder
+* applicant
+* manufacturer
+* factory
+* product type
+* model names
+* standards
+* IP rating
+* protective class
+* cooling method
+
+---
+
+### `src/schemas.py`
+
+Defines the small data models used in the project.
+
+The main models are:
+
+* `Evidence`
+* `ProductFact`
+* `RequirementMapping`
+* `Conflict`
+* `ExtractedFacts`
+* `ReviewMapping`
+* `ConflictMatrix`
+
+These models help keep the project structured and traceable.
+
+---
+
+### `src/nepqa_checklist.py`
+
+Maps extracted facts against NEPQA-style review items for PV inverters.
+
+It uses statuses such as:
+
+* `evidence_found`
+* `partial`
+* `missing`
+* `needs_confirmation`
+* `not_assessed`
+
+This does not decide compliance. It only shows what the provided documents appear to support.
+
+---
+
+### `src/reconcile.py`
+
+Compares facts across the two source documents.
+
+It checks fields such as:
+
+* manufacturer
+* product type
+* standards
+* model names
+* IP rating
+
+The goal is to show what matches, what differs, and what needs confirmation.
+
+---
+
+### `src/generate_draft.py`
+
+Generates a mechanical review draft from the structured outputs.
+
+This draft is useful for checking the pipeline result.
+
+---
+
+### `src/generate_final_draft.py`
+
+Generates a cleaner client-facing draft for SunBridge Trading.
+
+This draft avoids raw filenames where possible and uses clearer document names such as:
+
+* SGS IEC/EN 62109-1 Test Report
+* SGS Certificate of Conformity
+
+---
+
 ## Data Models
 
 The project uses small data models so the extracted information stays organized.
@@ -40,114 +325,109 @@ Shows where a fact came from.
 
 It stores:
 
-- PDF name
-- page number
-- short source note
-- confidence
+* source document
+* page number
+* short source note
+* confidence
 
 ### Product Fact
 
-Stores one important fact found in the PDFs.
+Stores one important fact found in the documents.
 
 Examples:
 
-- model name
-- manufacturer
-- certificate number
-- standard
-- rating
+* model name
+* manufacturer
+* certificate number
+* standard
+* IP rating
 
 ### Requirement Mapping
 
-Shows whether the available documents cover an expected review item.
+Shows whether a Nepal import review item is covered by the available evidence.
 
 Examples:
 
-- found
-- partly found
-- missing
-- needs confirmation
+* evidence found
+* missing
+* needs confirmation
+* not assessed
 
 ### Conflict
 
-Stores anything that does not clearly match between documents.
+Stores information that does not clearly match between the two documents.
 
 Examples:
 
-- different model names
-- different company names
-- missing value in one PDF
-
-## How These Models Work in the Pipeline
-
-PDF text → Product Facts + Evidence → Requirement Mapping → Conflicts → Final Draft
-
-
-### Documenting the Extraction Issues
+* different model families
+* different manufacturer or certificate holder information
+* different IP ratings
+* missing value in one document
 
 ---
 
-### Known Text Extraction Issues
+## Working Process
 
-Raw text extracted from manufacturer PDFs contains formatting bugs that distort the data:
+I started with manual review before writing the full pipeline.
 
-* **Split Table Rows:** Multi-column tables often extract line-by-line incorrectly. Model prefixes get grouped together on one line, while their matching suffixes drop down to the next line:
+The rough process was:
+
+1. Read the assessment brief.
+2. Skim NEPQA 2025 and focus on the PV inverter / grid-connected inverter section.
+3. Manually review the two manufacturer PDFs.
+4. Write notes about product details, manufacturer information, test evidence, labeling, and differences.
+5. Build text extraction.
+6. Build structured fact extraction.
+7. Create the NEPQA-style checklist mapping.
+8. Build source reconciliation and conflict detection.
+9. Generate a review draft.
+10. Improve the draft into a cleaner client-facing version.
+
+The plan changed slightly while building. Some cleanup was better handled during draft generation instead of during raw extraction. For example, full model lists were kept as evidence, but the final draft groups them by document and model family to make the output easier to read.
+
+---
+
+## Manual Review Notes
+
+Before relying on the generated outputs, I manually reviewed the main documents and wrote notes.
+
+`notes/review_notes.md` explains the task understanding:
+
+* this is a draft for review
+* NEPQA is used as a rough import-side reference
+* Section 1.4 is the relevant section for grid-tied inverters
+* the work does not need to be a final legal filing
+
+`notes/source_observations.md` records source-level findings:
+
+* Source A appears to be an SGS safety test report.
+* Source B appears to be an SGS Certificate of Conformity.
+* The two sources appear to describe different inverter families.
+* Several items need confirmation, including exact imported model, warranty, data logger, efficiency, MPPT efficiency, and THD information.
+
+---
+
+## Known Text Extraction Issues
+
+Raw text extracted from manufacturer PDFs can contain formatting problems.
+
+Examples:
+
+* multi-column tables may extract in the wrong reading order
+* model names may be split across lines
+* model suffixes may appear separately from model prefixes
+* some words and dates may be merged together
+
+Example:
+
 ```text
 CE-1P3001G   CE-1P5001G   CE-1P6001G
 -230-EU      -230-EU      -230-EU
-
 ```
 
-* **Column Line-Breaks:** Tight column layouts break long words and model names across lines using a hyphen and a newline character (e.g., `EU-\nAM2`).
-* **Merged Text Noise:** Artifacts from extraction occasionally smash distinct words and dates together into a single block of text (e.g., `GRAPHIEC      11/Oct/19`).
+Because of this, the project keeps raw extracted text as evidence but handles some cleanup later when generating the draft.
 
-
-### Strategic Deferrals
-
-To prioritize building the core pipeline, the following refinements are consciously deferred:
-
-* **Standards Classification:** Every `IEC` standard is logged, including page headers. Differentiating between a primary certification standard and a referenced standard is postponed.
-* **String Variation:** The current regex strictly targets pure `IEC` formats. Handling compound prefixes like `IEC/EN` or mapping them to common base standards is deferred to the normalization phase.
-* **Duplicate Mentions:** Identical facts found on different pages are intentionally preserved to maintain a complete log of evidence.
-
-
-### Manual Script Caveat
-
-Use `uv run python main.py` for normal runs. It extracts facts from both source files before generating NEPQA mapping and conflict outputs.
-
-Running `src/extract_facts.py` manually still writes only its configured single source into `outputs/extracted_facts.json`, so downstream outputs may show the other source as missing.
-
-## Current Outputs
-
-The pipeline generates:
-
-- `outputs/extracted_text/` - raw text extracted from the source PDFs
-- `outputs/extracted_facts.json` - structured facts with evidence references
-- `outputs/nepqa_mapping.json` - machine-readable NEPQA checklist mapping
-- `outputs/nepqa_mapping.md` - readable NEPQA checklist mapping
-- `outputs/conflict_matrix.json` - machine-readable source conflict comparison
-- `outputs/conflict_matrix.md` - readable conflict summary
-- `outputs/nepal_import_review_draft.md` - final review draft for SunBridge Trading
-
-
-## Current Key Finding
-
-The two manufacturer PDFs appear to describe different inverter model families.
-
-- `DSS_GZES230100125901_combined-1.pdf` appears to describe CHISAGE `CE-1P` single-phase inverter models.
-- `188_1115.pdf` appears to describe Deye `SUN-G06P3` grid-connected inverter models.
-
-Because of this, the exact inverter model being imported into Nepal should be confirmed before treating the generated draft as a reliable review package.
-
-
-## AI / LLM Design Note
-
-The core pipeline currently uses deterministic extraction and rule-based mapping instead of relying on an LLM.
-
-This was intentional because the task needs evidence-backed review, not a black-box summary. Regex and labeled-field extraction are easier to test, explain, and trace back to source pages.
-
-An LLM could be added later as a candidate extraction helper for messy fields, but any LLM output should still be checked against source evidence before being used in the final draft.
-
+---
 
 ## Draft Evolution
 
@@ -155,63 +435,128 @@ The review draft was improved through a few versions to make it clearer and easi
 
 ### v1 - Initial Draft
 
-- Facts were listed directly from extraction.
-- Model names were shown in one large combined list.
-- Standards were also shown in one combined list.
-- There was no key finding section.
+* Facts were listed directly from extraction.
+* Model names were shown in one large combined list.
+* Standards were also shown in one combined list.
+* There was no key finding section.
 
 Problem:
 
-- The main issue, that the two PDFs may describe different inverter families, was not clear enough.
+* The main issue, that the two PDFs may describe different inverter families, was not clear enough.
 
 ---
 
 ### v2 - More Structured Draft
 
-- Added clearer headings.
-- Added product, standards, conflict, and missing information sections.
+* Added clearer headings.
+* Added product, standards, conflict, and missing information sections.
 
 Problem:
 
-- The model list was still too flat.
-- Source A and Source B were not separated clearly enough.
+* The model list was still too flat.
+* The two source documents were not separated clearly enough.
 
 ---
 
 ### v3 - Source-Aware Draft
 
-- Separated Source A and Source B information.
-- Made conflicts easier to see.
-- Added better manufacturer and product summaries.
+* Separated the two source documents.
+* Made conflicts easier to see.
+* Added better manufacturer and product summaries.
 
 Problem:
 
-- Some sections were still too verbose.
-- Important findings needed to appear earlier.
+* Some sections were still too verbose.
+* Important findings needed to appear earlier.
 
 ---
 
 ### v4 - Full Model Listings
 
-- Changed from representative model ranges to complete model lists.
-- SUN models are now grouped by variant: AM2 and AM2-P1.
-- CE-1P models are listed in full.
-- Product summary header now shows model family instead of filename.
-- Model conflicts reference the Product Summary section instead of inline ranges.
+* Changed from representative model ranges to complete model lists.
+* Grouped SUN models into AM2 and AM2-P1 variants.
+* Listed CE-1P models in full.
 
-Main improvements:
+Main improvement:
 
-- Easier to review all available models at a glance.
-- SUN model variants are clearly organized.
-- No ambiguity from representative ranges — all models are visible.
+* All available models are visible without hiding the document mismatch.
 
+---
+
+### Current Final Draft
+
+The current final draft is:
+
+```text
+outputs/nepal_import_review_final_draft.md
+```
+
+It is cleaner than the mechanical draft and is intended to be easier for SunBridge Trading or a local Nepal import agent to read.
+
+---
+
+## Extraction Approach
+
+When I started the project, I expected to use an LLM to help extract information from the manufacturer documents.
+
+After reviewing the PDFs, I decided to first try a deterministic approach using regex patterns and labeled-field extraction.
+
+The main reason was that many important fields already appeared in predictable formats, such as:
+
+- certificate numbers
+- report numbers
+- manufacturer names
+- certificate holder names
+- standards
+- model names
+- IP ratings
+
+For these fields, deterministic extraction was simpler, easier to verify, and easier to trace back to the original document pages.
+
+As the project evolved, the extraction pipeline remained rule-based because it was able to recover most of the information needed for the review draft.
+
+### Where an LLM Could Help
+
+There are still some areas where an LLM could be useful in a future version.
+
+Examples include:
+
+- understanding long technical descriptions
+- extracting information from inconsistent table layouts
+- identifying manufacturer, applicant, and factory information when labels are written differently
+- grouping related information spread across multiple pages
+- distinguishing between primary certification standards and standards that are only referenced
+- generating cleaner summaries from large amounts of extracted evidence
+
+For this assessment, I chose to keep the core pipeline deterministic and evidence-based because the source documents were structured enough to support that approach.
+
+---
+
+## Current Limitations
+
+This project is still a review aid, not a final compliance package.
+
+Known limitations:
+
+* The exact imported inverter model still needs confirmation.
+* The two source documents may not belong to the same shipment.
+* Warranty information was not found in the provided PDFs.
+* Data logger and external monitoring information was not clearly found.
+* Efficiency, MPPT efficiency, Euro efficiency, THD, and no-load loss evidence was not clearly found.
+* IECEE / IECRE listing and certification body scope were not independently verified.
+* PDF export is not implemented yet.
+* The final draft should still be reviewed by the importer, manufacturer, or Nepal import agent.
+
+---
 
 ## Future Improvements
 
-Potential future improvements:
+Possible improvements:
 
-- LLM-assisted extraction for difficult unstructured fields.
-- Automatic standard normalization (IEC vs IEC/EN variants).
-- PDF export of the final review draft.
-- IECEE / IECRE verification integration.
-- Additional technical datasheet extraction.
+* Add PDF export for the final review draft.
+* Add more normalization for IEC and IEC/EN standard names.
+* Add automated tests for extraction and draft generation.
+* Add better model-name cleanup for complex PDF table layouts.
+* Add certificate body verification workflow.
+* Add extraction from technical datasheets if more documents are provided.
+* Make source document names configurable instead of hard-coded.
