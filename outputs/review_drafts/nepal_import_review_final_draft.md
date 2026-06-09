@@ -24,10 +24,12 @@ Additional documentation may be required before a Nepal import review can be com
 The reviewed documents appear to describe different grid-connected photovoltaic inverter families.
 
 **SGS IEC/EN 62109-1 Test Report - CHISAGE CE-1P single-phase inverter models**
+
 - Product type: Single phase inverter
 - IP rating: IP67
 
 Models listed:
+
 - CE-1P3001G-230-EU
 - CE-1P5001G-230-EU
 - CE-1P6001G-230-EU
@@ -39,10 +41,12 @@ Models listed:
 - CE-1P20001G-230-EU
 
 **SGS Certificate of Conformity - Deye SUN G06P3 inverter models**
+
 - Product type: Grid-connected PV Inverter
 - IP rating: IP65
 
 AM2 models:
+
 - SUN-3K-G06P3-EU-AM2
 - SUN-4K-G06P3-EU-AM2
 - SUN-5K-G06P3-EU-AM2
@@ -55,6 +59,7 @@ AM2 models:
 - SUN-15K-G06P3-EU-AM2
 
 AM2-P1 models:
+
 - SUN-3K-G06P3-EU-AM2-P1
 - SUN-4K-G06P3-EU-AM2-P1
 - SUN-5K-G06P3-EU-AM2-P1
@@ -78,11 +83,13 @@ AM2-P1 models:
 ## 5. Test and Standards Evidence
 
 **NEPQA-relevant standards identified:**
+
 - IEC 61727:2004
 - IEC 62109-1:2010
 - IEC 62116:2014
 
 **Other referenced standards identified:**
+
 - IEC 17065:2012
 - IEC 60309
 - IEC 60364-1
@@ -99,6 +106,7 @@ AM2-P1 models:
 - IEC 62852
 
 **Standards by reviewed document:**
+
 - SGS IEC/EN 62109-1 Test Report: IEC 60309, IEC 60364-1, IEC 60364-5-54, IEC 60417, IEC 60529, IEC 60664, IEC 60664-1, IEC 60707, IEC 60755, IEC 60990, IEC 62020, IEC 62109, IEC 62109-1:2010, IEC 62852
 - SGS Certificate of Conformity: IEC 17065:2012, IEC 61727:2004, IEC 62116:2014
 

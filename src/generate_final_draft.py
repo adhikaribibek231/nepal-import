@@ -26,6 +26,9 @@ DOCUMENT_LABELS = {
 
 
 def add_bullets(lines: list[str], values: list[str]) -> None:
+    if lines and lines[-1] != "":
+        lines.append("")
+
     if not values:
         lines.append("- Not identified in the supplied documents.")
         return
@@ -40,6 +43,7 @@ def add_model_list(lines: list[str], models: list[str]) -> None:
         return
 
     lines.append("Models listed:")
+    lines.append("")
     for model in sorted(models, key=model_sort_key):
         lines.append(f"- {model}")
 
@@ -50,12 +54,14 @@ def add_sun_model_groups(lines: list[str], models: list[str]) -> None:
 
     if am2_models:
         lines.append("AM2 models:")
+        lines.append("")
         for model in sorted(am2_models, key=model_sort_key):
             lines.append(f"- {model}")
         lines.append("")
 
     if p1_models:
         lines.append("AM2-P1 models:")
+        lines.append("")
         for model in sorted(p1_models, key=model_sort_key):
             lines.append(f"- {model}")
 
@@ -69,6 +75,7 @@ def add_document_model_review(
     models = display_models_for_source(facts, source_file)
 
     lines.append(f"**{DOCUMENT_LABELS[source_file]} - {family_description}**")
+    lines.append("")
     lines.append(
         f"- Product type: {format_inline_values(values_for_source(facts, source_file, 'product_type'))}"
     )
@@ -250,6 +257,7 @@ def generate_final_review_draft(
     add_bullets(lines, other_standards)
     lines.append("")
     lines.append("**Standards by reviewed document:**")
+    lines.append("")
     lines.append(
         f"- {DOCUMENT_LABELS[TEST_REPORT]}: {document_values_line(facts, TEST_REPORT, 'standard')}"
     )

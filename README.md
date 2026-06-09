@@ -99,6 +99,7 @@ In simple terms:
 4. The facts are compared with Nepal import review expectations.
 5. The two source documents are compared against each other.
 6. A review draft is generated from the structured results.
+7. The client-facing final draft is exported as PDF.
 
 The goal is to avoid loose summaries and keep the draft tied to evidence from the source documents.
 
@@ -114,6 +115,7 @@ The current full pipeline does the following:
 4. Detects missing, unclear, or conflicting information.
 5. Generates a mechanical review draft.
 6. Generates a cleaner client-facing final draft.
+7. Exports the client-facing final draft as PDF.
 
 ---
 
@@ -162,6 +164,7 @@ outputs/conflict_matrix.json
 outputs/conflict_matrix.md
 outputs/review_drafts/nepal_import_review_draft.md
 outputs/review_drafts/nepal_import_review_final_draft.md
+outputs/review_drafts/nepal_import_review_final_draft.pdf
 ```
 
 What they mean:
@@ -172,6 +175,7 @@ What they mean:
 * `outputs/conflict_matrix.md` shows mismatches between the two source documents.
 * `outputs/review_drafts/nepal_import_review_draft.md` is the mechanical draft generated from the structured outputs.
 * `outputs/review_drafts/nepal_import_review_final_draft.md` is the cleaner draft intended for SunBridge Trading.
+* `outputs/review_drafts/nepal_import_review_final_draft.pdf` is the PDF version of the client-facing final draft.
 
 ---
 
@@ -195,11 +199,13 @@ nepal-import/
 │   ├── conflict_matrix.md
 │   └── review_drafts/
 │       ├── nepal_import_review_draft.md
-│       ├── nepal_import_review_draft_v1.md
-│       ├── nepal_import_review_draft_v2.md
-│       ├── nepal_import_review_draft_v3.md
-│       ├── nepal_import_review_draft_v4.md
-│       └── nepal_import_review_final_draft.md
+│       ├── nepal_import_review_final_draft.md
+│       ├── nepal_import_review_final_draft.pdf
+│       └── past_drafts
+│           ├── nepal_import_review_draft_v1.md
+│           ├── nepal_import_review_draft_v2.md
+│           ├── nepal_import_review_draft_v3.md
+│           └── nepal_import_review_draft_v4.md
 ├── src/
 │   ├── extract_text.py
 │   ├── extract_facts.py
@@ -207,6 +213,7 @@ nepal-import/
 │   ├── reconcile.py
 │   ├── generate_draft.py
 │   ├── generate_final_draft.py
+│   ├── export_final_pdf.py
 │   └── schemas.py
 ├── main.py
 ├── approach_note.md
@@ -321,6 +328,24 @@ This draft avoids raw filenames where possible and uses clearer document names s
 
 * SGS IEC/EN 62109-1 Test Report
 * SGS Certificate of Conformity
+
+---
+
+### `src/export_final_pdf.py`
+
+Converts the already-clean client-facing Markdown draft into a PDF.
+
+It reads:
+
+```text
+outputs/review_drafts/nepal_import_review_final_draft.md
+```
+
+and writes:
+
+```text
+outputs/review_drafts/nepal_import_review_final_draft.pdf
+```
 
 ---
 
@@ -615,7 +640,6 @@ Known limitations:
 * Data logger and external monitoring information was not clearly found.
 * Efficiency, MPPT efficiency, Euro efficiency, THD, and no-load loss evidence was not clearly found.
 * IECEE / IECRE listing and certification body scope were not independently verified.
-* PDF export is not implemented yet.
 * The final draft should still be reviewed by the importer, manufacturer, or Nepal import agent.
 
 ---
@@ -624,7 +648,6 @@ Known limitations:
 
 Possible improvements:
 
-* Add PDF export for the final review draft.
 * Add more normalization for IEC and IEC/EN standard names.
 * Add automated tests for extraction and draft generation.
 * Add better model-name cleanup for complex PDF table layouts.

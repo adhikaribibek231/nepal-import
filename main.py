@@ -2,6 +2,7 @@ from pathlib import Path
 
 from src.extract_facts import process_files
 from src.extract_text import extract_text_from_pdf
+from src.export_final_pdf import export_final_draft_pdf
 from src.generate_draft import generate_review_draft
 from src.generate_final_draft import generate_final_review_draft
 from src.nepqa_checklist import (
@@ -83,6 +84,9 @@ def main() -> None:
         conflict_path=str(output_dir / "conflict_matrix.json"),
         output_path=str(review_drafts_dir / "nepal_import_review_final_draft.md"),
     )
+
+    print("7. Exporting client-facing final draft as PDF...")
+    export_final_draft_pdf()
 
     print("Pipeline complete.")
 
