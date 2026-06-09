@@ -71,10 +71,23 @@ def remove_partial_model_names(models: list[str]) -> list[str]:
     cleaned = []
 
     for model in sorted(set(models), key=len, reverse=True):
-        if not any(existing.startswith(model) for existing in cleaned):
+        if not any(
+            existing.startswith(model) and existing != f"{model}-P1"
+            for existing in cleaned
+        ):
             cleaned.append(model)
 
     return sorted(cleaned)
+
+
+def add_implied_sun_am2_models(models: list[str]) -> list[str]:
+    expanded = set(models)
+
+    for model in models:
+        if model.endswith("-AM2-P1"):
+            expanded.add(model.removesuffix("-P1"))
+
+    return sorted(expanded)
 
 
 def display_models_for_source(facts: ExtractedFacts, source_file: str) -> list[str]:
@@ -82,6 +95,9 @@ def display_models_for_source(facts: ExtractedFacts, source_file: str) -> list[s
         normalize_model_name(model)
         for model in values_for_source(facts, source_file, "model_name")
     ]
+
+    if source_file == SOURCE_B:
+        models = add_implied_sun_am2_models(models)
 
     return remove_partial_model_names(models)
 
@@ -108,30 +124,50 @@ def model_family(models: list[str]) -> str:
     return ", ".join(models) or "Not found in extracted facts."
 
 
-def representative_model_range(
-    models: list[str],
-    source_file: str | None = None,
-) -> str:
-    if not models:
-        return "Not found in extracted facts."
-
-    ordered_models = sorted(models, key=model_sort_key)
-
-    if len(ordered_models) == 1:
-        return ordered_models[0]
-
-    first_model = ordered_models[0]
-    last_model = ordered_models[-1]
-
-    # Source B lists base AM2 and AM2-P1 variants; show the family range.
-    if source_file == SOURCE_B and first_model.endswith("-P1"):
-        first_model = first_model.removesuffix("-P1")
-
-    return f"{first_model} to {last_model}"
-
-
 def format_inline_values(values: list[str]) -> str:
     return ", ".join(values) or "Not found in extracted facts."
+
+
+def add_model_list(lines: list[str], models: list[str]) -> None:
+    if not models:
+        lines.append("- Not found in extracted facts.")
+        return
+
+    for model in sorted(models, key=model_sort_key):
+        lines.append(f"- {model}")
+
+
+def add_sun_model_groups(lines: list[str], models: list[str]) -> None:
+    am2_models = [model for model in models if model.endswith("-AM2")]
+    p1_models = [model for model in models if model.endswith("-AM2-P1")]
+
+    if am2_models:
+        lines.append("  AM2 models:")
+        for model in sorted(am2_models, key=model_sort_key):
+            lines.append(f"  - {model}")
+
+    if p1_models:
+        lines.append("  AM2-P1 models:")
+        for model in sorted(p1_models, key=model_sort_key):
+            lines.append(f"  - {model}")
+
+
+def add_model_list_for_source(
+    lines: list[str],
+    source_file: str,
+    models: list[str],
+) -> None:
+    if not models:
+        lines.append("- Models found: Not found in extracted facts.")
+        return
+
+    lines.append("- Models found:")
+
+    if source_file == SOURCE_B:
+        add_sun_model_groups(lines, models)
+    else:
+        for model in sorted(models, key=model_sort_key):
+            lines.append(f"  - {model}")
 
 
 def add_source_product_summary(
@@ -142,7 +178,7 @@ def add_source_product_summary(
 ) -> None:
     models = display_models_for_source(facts, source_file)
 
-    lines.append(f"**{source_label} \u2014 {source_file}**")
+    lines.append(f"**{source_label} \u2014 {model_family(models)}**")
     product_type = format_inline_values(
         values_for_source(facts, source_file, "product_type")
     )
@@ -150,13 +186,10 @@ def add_source_product_summary(
         values_for_source(facts, source_file, "ip_rating")
     )
 
+    lines.append(f"- Source file: {source_file}")
     lines.append(f"- Product type: {product_type}")
-    lines.append(f"- Model family: {model_family(models)}")
-    lines.append(
-        "- Representative models: "
-        f"{representative_model_range(models, source_file)}"
-    )
     lines.append(f"- IP rating: {ip_rating}")
+    add_model_list_for_source(lines, source_file, models)
     lines.append("")
 
 
@@ -215,16 +248,11 @@ def add_mapping_list(lines: list[str], mapping: ReviewMapping, status: str) -> N
     lines.append("")
 
 
-def add_model_conflict_summary(lines: list[str], facts: ExtractedFacts) -> None:
-    for source_label, source_file in (
-        ("Source A", SOURCE_A),
-        ("Source B", SOURCE_B),
-    ):
-        models = display_models_for_source(facts, source_file)
-        lines.append(
-            f"- {source_label}: {model_family(models)}; representative models: "
-            f"{representative_model_range(models, source_file)}"
-        )
+def add_model_conflict_summary(lines: list[str]) -> None:
+    lines.append("- Source A: CE-1P series models listed in Product Summary")
+    lines.append(
+        "- Source B: SUN G06P3 AM2 / AM2-P1 models listed in Product Summary"
+    )
 
 
 def generate_review_draft(
@@ -312,7 +340,7 @@ def generate_review_draft(
             lines.append("")
             lines.append(f"- Status: `{conflict.status}`")
             if conflict.field_name == "model_name":
-                add_model_conflict_summary(lines, facts)
+                add_model_conflict_summary(lines)
             else:
                 lines.append(f"- Source A: {conflict.source_a}")
                 lines.append(f"- Source B: {conflict.source_b}")

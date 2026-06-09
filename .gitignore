@@ -208,7 +208,8 @@ tempCodeRunnerFile.py
 
 # PyPI configuration file
 .pypirc
-
+.agents/
+.codex/
 # Marimo
 marimo/_static/
 marimo/_lsp/

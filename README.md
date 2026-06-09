@@ -85,8 +85,6 @@ PDF text → Product Facts + Evidence → Requirement Mapping → Conflicts → 
 
 ### Documenting the Extraction Issues
 
-Here is a short, simple README block that only documents the layout problems found in the raw text files:
-
 ---
 
 ### Known Text Extraction Issues
@@ -118,3 +116,91 @@ To prioritize building the core pipeline, the following refinements are consciou
 Use `uv run python main.py` for normal runs. It extracts facts from both source files before generating NEPQA mapping and conflict outputs.
 
 Running `src/extract_facts.py` manually still writes only its configured single source into `outputs/extracted_facts.json`, so downstream outputs may show the other source as missing.
+
+## Current Outputs
+
+The pipeline generates:
+
+- `outputs/extracted_text/` - raw text extracted from the source PDFs
+- `outputs/extracted_facts.json` - structured facts with evidence references
+- `outputs/nepqa_mapping.json` - machine-readable NEPQA checklist mapping
+- `outputs/nepqa_mapping.md` - readable NEPQA checklist mapping
+- `outputs/conflict_matrix.json` - machine-readable source conflict comparison
+- `outputs/conflict_matrix.md` - readable conflict summary
+- `outputs/nepal_import_review_draft.md` - final review draft for SunBridge Trading
+
+
+## Current Key Finding
+
+The two manufacturer PDFs appear to describe different inverter model families.
+
+- `DSS_GZES230100125901_combined-1.pdf` appears to describe CHISAGE `CE-1P` single-phase inverter models.
+- `188_1115.pdf` appears to describe Deye `SUN-G06P3` grid-connected inverter models.
+
+Because of this, the exact inverter model being imported into Nepal should be confirmed before treating the generated draft as a reliable review package.
+
+
+## AI / LLM Design Note
+
+The core pipeline currently uses deterministic extraction and rule-based mapping instead of relying on an LLM.
+
+This was intentional because the task needs evidence-backed review, not a black-box summary. Regex and labeled-field extraction are easier to test, explain, and trace back to source pages.
+
+An LLM could be added later as a candidate extraction helper for messy fields, but any LLM output should still be checked against source evidence before being used in the final draft.
+
+
+## Draft Evolution
+
+The review draft was improved through a few versions to make it clearer and easier to review.
+
+### v1 - Initial Draft
+
+- Facts were listed directly from extraction.
+- Model names were shown in one large combined list.
+- Standards were also shown in one combined list.
+- There was no key finding section.
+
+Problem:
+
+- The main issue, that the two PDFs may describe different inverter families, was not clear enough.
+
+---
+
+### v2 - More Structured Draft
+
+- Added clearer headings.
+- Added product, standards, conflict, and missing information sections.
+
+Problem:
+
+- The model list was still too flat.
+- Source A and Source B were not separated clearly enough.
+
+---
+
+### v3 - Source-Aware Draft
+
+- Separated Source A and Source B information.
+- Made conflicts easier to see.
+- Added better manufacturer and product summaries.
+
+Problem:
+
+- Some sections were still too verbose.
+- Important findings needed to appear earlier.
+
+---
+
+### v4 - Full Model Listings
+
+- Changed from representative model ranges to complete model lists.
+- SUN models are now grouped by variant: AM2 and AM2-P1.
+- CE-1P models are listed in full.
+- Product summary header now shows model family instead of filename.
+- Model conflicts reference the Product Summary section instead of inline ranges.
+
+Main improvements:
+
+- Easier to review all available models at a glance.
+- SUN model variants are clearly organized.
+- No ambiguity from representative ranges — all models are visible.
