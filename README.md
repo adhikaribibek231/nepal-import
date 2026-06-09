@@ -62,11 +62,14 @@ Important notes:
 ```text
 notes/review_notes.md
 notes/source_observations.md
+approach_note.md
 ```
 
 `review_notes.md` contains the initial understanding of the task and NEPQA relevance.
 
 `source_observations.md` contains manual observations from the two manufacturer PDFs before and during coding.
+
+`approach_note.md` briefly explains the working approach in simple non-technical words.
 
 ---
 
@@ -206,6 +209,7 @@ nepal-import/
 │   ├── generate_final_draft.py
 │   └── schemas.py
 ├── main.py
+├── approach_note.md
 ├── README.md
 └── pyproject.toml
 ```
@@ -431,6 +435,68 @@ CE-1P3001G   CE-1P5001G   CE-1P6001G
 ```
 
 Because of this, the project keeps raw extracted text as evidence but handles some cleanup later when generating the draft.
+
+---
+
+## Challenges and Improvements
+
+Several practical issues came up while turning the two manufacturer PDFs into reviewable outputs.
+
+### Page References
+
+Early extraction treated each document too much like one block of text, which made source references less useful. The text extractor now writes page markers, and fact extraction reads those markers so extracted facts can keep page numbers.
+
+Remaining limitation:
+
+* Page references still depend on the quality of the PDF text extraction.
+
+### Single-File Testing
+
+Early testing was done one document at a time, which could replace a combined `outputs/extracted_facts.json` with facts from only one source. The normal `main.py` pipeline now processes both source documents together before building the NEPQA mapping, conflict matrix, and drafts.
+
+Remaining limitation:
+
+* Running `src/extract_facts.py` directly is still a manual testing path and can overwrite the combined facts output.
+
+### PDF Layout Noise
+
+The PDFs contain table layouts, split rows, broken model suffixes, and other extraction artifacts. The current extraction handles the common structured fields and preserves raw evidence, while draft generation performs some display cleanup.
+
+Remaining limitation:
+
+* Layout noise is not fully removed from raw extracted text or every intermediate output.
+
+### Model Names
+
+Model extraction can still capture partial names alongside more complete names. The review drafts reduce this by showing cleaner, source-separated model lists.
+
+Remaining limitation:
+
+* `outputs/extracted_facts.json` intentionally keeps partial model matches when they were found in the source text.
+
+### IP Ratings
+
+The observed IP ratings appear in formats such as `IP65`, `IP67`, and `IP 67`. Extraction normalizes the observed spacing differences so these can be compared in later steps.
+
+Remaining limitation:
+
+* Additional IP formats should be tested before treating the extractor as fully general.
+
+### Standards
+
+The final drafts separate NEPQA-relevant standards from other standards referenced in the documents. This keeps the Nepal import review items easier to scan.
+
+Remaining limitation:
+
+* The separation uses a predefined standards list, not a full certificate-scope analysis.
+
+### Conflicts
+
+The conflict matrix compares fields that matter for review, including product description, model names, standards, manufacturer information, and IP rating. This helps show that the two PDFs should not be treated as one confirmed product package.
+
+Remaining limitation:
+
+* Some conflict entries still need manual interpretation because they reflect raw extraction behavior as well as real document differences.
 
 ---
 
