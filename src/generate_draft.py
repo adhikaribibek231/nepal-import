@@ -1,8 +1,12 @@
 import json
+import re
 from pathlib import Path
 
 from src.schemas import ConflictMatrix, ExtractedFacts, ReviewMapping
 
+
+SOURCE_A = "DSS_GZES230100125901_combined-1.txt"
+SOURCE_B = "188_1115.txt"
 
 NEPQA_RELEVANT_STANDARDS = {
     "IEC 61727",
@@ -42,6 +46,118 @@ def values_for_field(facts: ExtractedFacts, field_name: str) -> list[str]:
     }
 
     return sorted(values)
+
+
+def values_for_source(
+    facts: ExtractedFacts,
+    source_file: str,
+    field_name: str,
+) -> list[str]:
+    values = {
+        fact.normalized_value or fact.raw_value
+        for fact in facts.facts
+        if fact.field_name == field_name
+        and fact.evidence.source_file == source_file
+    }
+
+    return sorted(values)
+
+
+def normalize_model_name(model: str) -> str:
+    return model.replace(" -", "-").replace("- ", "-").strip()
+
+
+def remove_partial_model_names(models: list[str]) -> list[str]:
+    cleaned = []
+
+    for model in sorted(set(models), key=len, reverse=True):
+        if not any(existing.startswith(model) for existing in cleaned):
+            cleaned.append(model)
+
+    return sorted(cleaned)
+
+
+def display_models_for_source(facts: ExtractedFacts, source_file: str) -> list[str]:
+    models = [
+        normalize_model_name(model)
+        for model in values_for_source(facts, source_file, "model_name")
+    ]
+
+    return remove_partial_model_names(models)
+
+
+def model_sort_key(model: str) -> tuple[int, int, str]:
+    ce_match = re.search(r"\bCE-1P(?P<power>\d+)G", model)
+    if ce_match:
+        return 0, int(ce_match.group("power")), model
+
+    sun_match = re.search(r"\bSUN-(?P<power>\d+)K", model)
+    if sun_match:
+        return 1, int(sun_match.group("power")), model
+
+    return 2, 0, model
+
+
+def model_family(models: list[str]) -> str:
+    if any(model.startswith("CE-1P") for model in models):
+        return "CE-1P series"
+
+    if any(model.startswith("SUN-") and "G06P3" in model for model in models):
+        return "SUN G06P3 series"
+
+    return ", ".join(models) or "Not found in extracted facts."
+
+
+def representative_model_range(
+    models: list[str],
+    source_file: str | None = None,
+) -> str:
+    if not models:
+        return "Not found in extracted facts."
+
+    ordered_models = sorted(models, key=model_sort_key)
+
+    if len(ordered_models) == 1:
+        return ordered_models[0]
+
+    first_model = ordered_models[0]
+    last_model = ordered_models[-1]
+
+    # Source B lists base AM2 and AM2-P1 variants; show the family range.
+    if source_file == SOURCE_B and first_model.endswith("-P1"):
+        first_model = first_model.removesuffix("-P1")
+
+    return f"{first_model} to {last_model}"
+
+
+def format_inline_values(values: list[str]) -> str:
+    return ", ".join(values) or "Not found in extracted facts."
+
+
+def add_source_product_summary(
+    lines: list[str],
+    facts: ExtractedFacts,
+    source_label: str,
+    source_file: str,
+) -> None:
+    models = display_models_for_source(facts, source_file)
+
+    lines.append(f"**{source_label} \u2014 {source_file}**")
+    product_type = format_inline_values(
+        values_for_source(facts, source_file, "product_type")
+    )
+    ip_rating = format_inline_values(
+        values_for_source(facts, source_file, "ip_rating")
+    )
+
+    lines.append(f"- Product type: {product_type}")
+    lines.append(f"- Model family: {model_family(models)}")
+    lines.append(
+        "- Representative models: "
+        f"{representative_model_range(models, source_file)}"
+    )
+    lines.append(f"- IP rating: {ip_rating}")
+    lines.append("")
 
 
 def split_standards(standards: list[str]) -> tuple[list[str], list[str]]:
@@ -99,6 +215,18 @@ def add_mapping_list(lines: list[str], mapping: ReviewMapping, status: str) -> N
     lines.append("")
 
 
+def add_model_conflict_summary(lines: list[str], facts: ExtractedFacts) -> None:
+    for source_label, source_file in (
+        ("Source A", SOURCE_A),
+        ("Source B", SOURCE_B),
+    ):
+        models = display_models_for_source(facts, source_file)
+        lines.append(
+            f"- {source_label}: {model_family(models)}; representative models: "
+            f"{representative_model_range(models, source_file)}"
+        )
+
+
 def generate_review_draft(
     facts_path: str,
     mapping_path: str,
@@ -129,9 +257,20 @@ def generate_review_draft(
         lines.append(f"- {document}")
 
     lines.extend(["", "## 4. Product Summary", ""])
-    add_value_section(lines, "Product type", values_for_field(facts, "product_type"))
-    add_value_section(lines, "Model names", values_for_field(facts, "model_name"))
-    add_value_section(lines, "IP ratings", values_for_field(facts, "ip_rating"))
+    lines.append(
+        "The documents appear to describe grid-connected PV inverters, but not the same model family."
+    )
+    lines.append("")
+    add_source_product_summary(lines, facts, "Source A", SOURCE_A)
+    add_source_product_summary(lines, facts, "Source B", SOURCE_B)
+    lines.append(
+        "**Review note:** These appear to be different inverter families. The exact model being imported should be confirmed."
+    )
+    lines.append("")
+    lines.append(
+        "Full extracted model list is available in `outputs/extracted_facts.json`."
+    )
+    lines.append("")
 
     lines.extend(["## 5. Manufacturer and Factory Information", ""])
     add_value_section(lines, "Manufacturer", values_for_field(facts, "manufacturer"))
@@ -172,8 +311,11 @@ def generate_review_draft(
             lines.append(f"### {conflict.field_name}")
             lines.append("")
             lines.append(f"- Status: `{conflict.status}`")
-            lines.append(f"- Source A: {conflict.source_a}")
-            lines.append(f"- Source B: {conflict.source_b}")
+            if conflict.field_name == "model_name":
+                add_model_conflict_summary(lines, facts)
+            else:
+                lines.append(f"- Source A: {conflict.source_a}")
+                lines.append(f"- Source B: {conflict.source_b}")
             lines.append(f"- Issue: {conflict.issue}")
             if conflict.decision:
                 lines.append(f"- Decision: {conflict.decision}")
