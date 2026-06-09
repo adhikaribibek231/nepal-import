@@ -4,6 +4,15 @@ from pathlib import Path
 from src.schemas import ConflictMatrix, ExtractedFacts, ReviewMapping
 
 
+NEPQA_RELEVANT_STANDARDS = {
+    "IEC 61727",
+    "IEC 62116",
+    "IEC 62891",
+    "IEC 62109-1",
+    "IEC 62109-2",
+}
+
+
 def load_extracted_facts(path: str) -> ExtractedFacts:
     with open(path, "r", encoding="utf-8") as file:
         data = json.load(file)
@@ -33,6 +42,19 @@ def values_for_field(facts: ExtractedFacts, field_name: str) -> list[str]:
     }
 
     return sorted(values)
+
+
+def split_standards(standards: list[str]) -> tuple[list[str], list[str]]:
+    primary = []
+    other = []
+
+    for standard in standards:
+        if any(key in standard for key in NEPQA_RELEVANT_STANDARDS):
+            primary.append(standard)
+        else:
+            other.append(standard)
+
+    return sorted(set(primary)), sorted(set(other))
 
 
 def documents_reviewed(facts: ExtractedFacts) -> list[str]:
@@ -96,19 +118,22 @@ def generate_review_draft(
         "",
         "This draft summarizes the extracted PDF text, extracted facts, NEPQA mapping, and detected source conflicts. It is not a final approval decision.",
         "",
-        "## 2. Documents Reviewed",
+        "## 2. Key Review Finding",
+        "The provided documents appear to cover different inverter model families. The imported model must be confirmed before this draft can be treated as a reliable import review package.",
+        "",
+        "## 3. Documents Reviewed",
         "",
     ]
 
     for document in documents_reviewed(facts):
         lines.append(f"- {document}")
 
-    lines.extend(["", "## 3. Product Summary", ""])
+    lines.extend(["", "## 4. Product Summary", ""])
     add_value_section(lines, "Product type", values_for_field(facts, "product_type"))
     add_value_section(lines, "Model names", values_for_field(facts, "model_name"))
     add_value_section(lines, "IP ratings", values_for_field(facts, "ip_rating"))
 
-    lines.extend(["## 4. Manufacturer and Factory Information", ""])
+    lines.extend(["## 5. Manufacturer and Factory Information", ""])
     add_value_section(lines, "Manufacturer", values_for_field(facts, "manufacturer"))
     add_value_section(lines, "Factory", values_for_field(facts, "factory"))
     add_value_section(
@@ -118,8 +143,12 @@ def generate_review_draft(
     )
     add_value_section(lines, "Applicant", values_for_field(facts, "applicant"))
 
-    lines.extend(["## 5. Standards and Test Evidence", ""])
-    add_value_section(lines, "Standards found", values_for_field(facts, "standard"))
+    lines.extend(["## 6. Standards and Test Evidence", ""])
+    nepqa_standards, other_standards = split_standards(
+        values_for_field(facts, "standard")
+    )
+    add_value_section(lines, "NEPQA-relevant standards found", nepqa_standards)
+    add_value_section(lines, "Other referenced standards found", other_standards)
     add_value_section(
         lines,
         "Certificate numbers",
@@ -127,14 +156,14 @@ def generate_review_draft(
     )
     add_value_section(lines, "Report numbers", values_for_field(facts, "report_number"))
 
-    lines.extend(["## 6. NEPQA Mapping Summary", ""])
+    lines.extend(["## 7. NEPQA Mapping Summary", ""])
     for status, count in sorted(counts.items()):
         lines.append(f"- `{status}`: {count}")
 
     lines.extend(["", "**Evidence found:**"])
     add_mapping_list(lines, mapping, "evidence_found")
 
-    lines.extend(["## 7. Conflict Summary", ""])
+    lines.extend(["## 8. Conflict Summary", ""])
     if not conflict_matrix.conflicts:
         lines.append("- No conflicts generated.")
         lines.append("")
@@ -150,7 +179,7 @@ def generate_review_draft(
                 lines.append(f"- Decision: {conflict.decision}")
             lines.append("")
 
-    lines.extend(["## 8. Missing Information", ""])
+    lines.extend(["## 9. Missing Information", ""])
     add_mapping_list(lines, mapping, "missing")
 
     missing_conflicts = [
@@ -165,7 +194,7 @@ def generate_review_draft(
             lines.append(f"- {conflict.field_name}: {conflict.issue}")
         lines.append("")
 
-    lines.extend(["## 9. Items Needing Confirmation", ""])
+    lines.extend(["## 10. Items Needing Confirmation", ""])
     add_mapping_list(lines, mapping, "not_assessed")
 
     confirmation_conflicts = [
@@ -182,7 +211,7 @@ def generate_review_draft(
 
     lines.extend(
         [
-            "## 10. Limitations",
+            "## 11. Limitations",
             "",
             "- This draft only summarizes existing extracted facts, NEPQA mappings, and conflict results.",
             "- It does not verify certification body listing or scope on IECEE/IECRE websites.",

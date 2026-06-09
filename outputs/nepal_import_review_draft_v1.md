@@ -4,15 +4,12 @@
 
 This draft summarizes the extracted PDF text, extracted facts, NEPQA mapping, and detected source conflicts. It is not a final approval decision.
 
-## 2. Key Review Finding
-The provided documents appear to cover different inverter model families. The imported model must be confirmed before this draft can be treated as a reliable import review package.
-
-## 3. Documents Reviewed
+## 2. Documents Reviewed
 
 - 188_1115.txt
 - DSS_GZES230100125901_combined-1.txt
 
-## 4. Product Summary
+## 3. Product Summary
 
 **Product type:**
 - Grid-connected PV Inverter
@@ -64,7 +61,7 @@ The provided documents appear to cover different inverter model families. The im
 - IP65
 - IP67
 
-## 5. Manufacturer and Factory Information
+## 4. Manufacturer and Factory Information
 
 **Manufacturer:**
 - Zhejiang CHISAGE New Energy Technology Co., Ltd
@@ -78,14 +75,9 @@ The provided documents appear to cover different inverter model families. The im
 **Applicant:**
 - Zhejiang CHISAGE New Energy Technology Co., Ltd
 
-## 6. Standards and Test Evidence
+## 5. Standards and Test Evidence
 
-**NEPQA-relevant standards found:**
-- IEC 61727:2004
-- IEC 62109-1:2010
-- IEC 62116:2014
-
-**Other referenced standards found:**
+**Standards found:**
 - IEC 17065:2012
 - IEC 60309
 - IEC 60364-1
@@ -97,8 +89,11 @@ The provided documents appear to cover different inverter model families. The im
 - IEC 60707
 - IEC 60755
 - IEC 60990
+- IEC 61727:2004
 - IEC 62020
 - IEC 62109
+- IEC 62109-1:2010
+- IEC 62116:2014
 - IEC 62852
 
 **Certificate numbers:**
@@ -107,7 +102,7 @@ The provided documents appear to cover different inverter model families. The im
 **Report numbers:**
 - GZES230100125901
 
-## 7. NEPQA Mapping Summary
+## 6. NEPQA Mapping Summary
 
 - `evidence_found`: 7
 - `missing`: 23
@@ -129,7 +124,7 @@ The provided documents appear to cover different inverter model families. The im
 - Inverter label should include brand, model, and type.
   Notes: Matched extracted field: model_name
 
-## 8. Conflict Summary
+## 7. Conflict Summary
 
 ### manufacturer
 
@@ -171,7 +166,7 @@ The provided documents appear to cover different inverter model families. The im
 - Issue: ip_rating differs between Source A and Source B.
 - Decision: Needs confirmation if this affects the imported product identity.
 
-## 9. Missing Information
+## 8. Missing Information
 
 - IEC 62891:2020 MPPT efficiency evidence should be provided.
   Notes: No extracted evidence found for field: standard
@@ -223,7 +218,7 @@ The provided documents appear to cover different inverter model families. The im
 **Missing in one source:**
 - manufacturer: manufacturer was found in Source A but not in Source B.
 
-## 10. Items Needing Confirmation
+## 9. Items Needing Confirmation
 
 - Certification body or lab should be IECEE/IECRE listed with PV inverter testing scope.
   Notes: This item requires manual review or source verification.
@@ -238,7 +233,7 @@ The provided documents appear to cover different inverter model families. The im
 - model_name: model_name differs between Source A and Source B.
 - ip_rating: ip_rating differs between Source A and Source B.
 
-## 11. Limitations
+## 10. Limitations
 
 - This draft only summarizes existing extracted facts, NEPQA mappings, and conflict results.
 - It does not verify certification body listing or scope on IECEE/IECRE websites.
