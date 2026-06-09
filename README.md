@@ -24,6 +24,7 @@ This will:
 2. Extract evidence-backed facts
 3. Generate NEPQA mapping
 4. Generate conflict matrix
+5. Generate Nepal import review draft
 
 ## running text extraction
 ``` bash

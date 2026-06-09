@@ -2,6 +2,7 @@ from pathlib import Path
 
 from src.extract_facts import process_files
 from src.extract_text import extract_text_from_pdf
+from src.generate_draft import generate_review_draft
 from src.nepqa_checklist import (
     build_review_mapping,
     load_extracted_facts,
@@ -63,6 +64,14 @@ def main() -> None:
     save_conflict_markdown(
         conflict_matrix,
         str(output_dir / "conflict_matrix.md"),
+    )
+
+    print("5. Generating review draft...")
+    generate_review_draft(
+        facts_path=str(output_dir / "extracted_facts.json"),
+        mapping_path=str(output_dir / "nepqa_mapping.json"),
+        conflict_path=str(output_dir / "conflict_matrix.json"),
+        output_path=str(output_dir / "nepal_import_review_draft.md"),
     )
 
     print("Pipeline complete.")
