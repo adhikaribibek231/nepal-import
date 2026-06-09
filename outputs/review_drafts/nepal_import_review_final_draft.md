@@ -14,12 +14,30 @@ However, the exact inverter model intended for import could not be confirmed fro
 
 Additional documentation may be required before a Nepal import review can be completed.
 
-## 2. Documents Reviewed
+## 2. Key Review Findings
+
+1. The supplied documents appear to describe different inverter model families.
+2. The exact inverter model intended for Nepal import could not be confirmed.
+3. Evidence for IEC 61727, IEC 62116, and IEC 62109-1 was identified.
+4. Additional documentation is still required before a full Nepal import review can be completed.
+
+## 3. Manufacturer and Certificate Information
+
+| Item | Information found |
+|---|---|
+| Manufacturer named in test report | Zhejiang CHISAGE New Energy Technology Co., Ltd |
+| Applicant named in test report | Zhejiang CHISAGE New Energy Technology Co., Ltd |
+| Factory named in test report | NingBo Deye Inverter Technology Co., Ltd. |
+| Certificate holder named in certificate | NingBo Deye Inverter Technology Co., Ltd. |
+| Certificate number | PCS-24-1022 |
+| Test report number | GZES230100125901 |
+
+## 4. Documents Reviewed
 
 - SGS IEC/EN 62109-1 Test Report
 - SGS Certificate of Conformity
 
-## 3. Product and Variant Review
+## 5. Product and Variant Review
 
 The reviewed documents appear to describe different grid-connected photovoltaic inverter families.
 
@@ -27,60 +45,15 @@ The reviewed documents appear to describe different grid-connected photovoltaic 
 
 - Product type: Single phase inverter
 - IP rating: IP67
-
-Models listed:
-
-- CE-1P3001G-230-EU
-- CE-1P5001G-230-EU
-- CE-1P6001G-230-EU
-- CE-1P8001G-230-EU
-- CE-1P10001G-230-EU
-- CE-1P13001G-230-EU
-- CE-1P16001G-230-EU
-- CE-1P18001G-230-EU
-- CE-1P20001G-230-EU
+- Models: CE-1P series, full list in Appendix A
 
 **SGS Certificate of Conformity - Deye SUN G06P3 inverter models**
 
 - Product type: Grid-connected PV Inverter
 - IP rating: IP65
+- Models: SUN G06P3 AM2 and AM2-P1 variants, full list in Appendix A
 
-AM2 models:
-
-- SUN-3K-G06P3-EU-AM2
-- SUN-4K-G06P3-EU-AM2
-- SUN-5K-G06P3-EU-AM2
-- SUN-6K-G06P3-EU-AM2
-- SUN-7K-G06P3-EU-AM2
-- SUN-8K-G06P3-EU-AM2
-- SUN-9K-G06P3-EU-AM2
-- SUN-10K-G06P3-EU-AM2
-- SUN-12K-G06P3-EU-AM2
-- SUN-15K-G06P3-EU-AM2
-
-AM2-P1 models:
-
-- SUN-3K-G06P3-EU-AM2-P1
-- SUN-4K-G06P3-EU-AM2-P1
-- SUN-5K-G06P3-EU-AM2-P1
-- SUN-6K-G06P3-EU-AM2-P1
-- SUN-7K-G06P3-EU-AM2-P1
-- SUN-8K-G06P3-EU-AM2-P1
-- SUN-9K-G06P3-EU-AM2-P1
-- SUN-10K-G06P3-EU-AM2-P1
-- SUN-12K-G06P3-EU-AM2-P1
-- SUN-15K-G06P3-EU-AM2-P1
-
-## 4. Manufacturer and Certificate Information
-
-- Manufacturer named in the test report: Zhejiang CHISAGE New Energy Technology Co., Ltd
-- Applicant named in the test report: Zhejiang CHISAGE New Energy Technology Co., Ltd
-- Factory named in the test report: NingBo Deye Inverter Technology Co., Ltd.
-- Certificate holder named in the certificate: NingBo Deye Inverter Technology Co., Ltd.
-- Certificate number: PCS-24-1022
-- Test report number: GZES230100125901
-
-## 5. Test and Standards Evidence
+## 6. Test and Standards Evidence
 
 **NEPQA-relevant standards identified:**
 
@@ -110,19 +83,31 @@ AM2-P1 models:
 - SGS IEC/EN 62109-1 Test Report: IEC 60309, IEC 60364-1, IEC 60364-5-54, IEC 60417, IEC 60529, IEC 60664, IEC 60664-1, IEC 60707, IEC 60755, IEC 60990, IEC 62020, IEC 62109, IEC 62109-1:2010, IEC 62852
 - SGS Certificate of Conformity: IEC 17065:2012, IEC 61727:2004, IEC 62116:2014
 
-## 6. Nepal Import Review Reference Items
+## 7. Nepal Import Review Snapshot
 
-The following review reference items had evidence in the supplied documents:
+### Evidence identified in supplied documents
 
-- IEC 61727:2004 certificate/test evidence should be provided.
-- IEC 62116:2014 islanding prevention test evidence should be provided.
-- IEC 62109-1:2010 safety evidence should be provided.
-- Ingress protection should be at least IP65 according to IEC 60529.
-- Inverter should have fan cooling or an appropriate heat sink to avoid excessive heating.
-- Inverter label should include manufacturer name.
-- Inverter label should include brand, model, and type.
+| Review item | Status |
+|---|---|
+| IEC 61727 evidence | Evidence identified |
+| IEC 62116 evidence | Evidence identified |
+| IEC 62109-1 evidence | Evidence identified |
+| IP65 or higher protection evidence | Evidence identified |
+| Manufacturer information | Evidence identified |
+| Model information | Evidence identified |
 
-## 7. Consistent Information Across Documents
+### Additional evidence recommended
+
+| Review item | Status |
+|---|---|
+| IEC 62891 MPPT efficiency evidence | Not found in supplied documents |
+| IEC 62109-2 inverter safety evidence | Not found in supplied documents |
+| Warranty agreement | Not found in supplied documents |
+| Technical datasheet/catalogue for exact imported model | Not found in supplied documents |
+| Data logging / monitoring evidence | Not found in supplied documents |
+| Efficiency, THD, and no-load loss evidence | Not found in supplied documents |
+
+## 8. Consistent Information Across Documents
 
 The following information appears broadly consistent:
 
@@ -131,7 +116,7 @@ The following information appears broadly consistent:
 - Both documents reference IEC-based standards.
 - Both documents relate to products associated with NingBo Deye Inverter Technology Co., Ltd.
 
-## 8. Mismatches and Items Requiring Confirmation
+## 9. Mismatches and Items Requiring Confirmation
 
 - Model family mismatch: the test report appears to cover CE-1P series, while the certificate appears to cover SUN G06P3 series.
 - Product type mismatch: the test report identifies Single phase inverter, while the certificate identifies Grid-connected PV Inverter.
@@ -140,7 +125,7 @@ The following information appears broadly consistent:
 - Standards evidence is split across the document set. The certificate supports IEC 61727 and IEC 62116 evidence; the test report supports IEC 62109-1 evidence.
 - The exact inverter model intended for Nepal import could not be confirmed from the supplied documents.
 
-## 9. Additional Documents Recommended
+## 10. Additional Documents Recommended
 
 - IEC 62891 MPPT efficiency evidence.
 - IEC 62109-2 inverter safety evidence.
@@ -152,9 +137,51 @@ The following information appears broadly consistent:
 - Protection-function documentation for DC reverse polarity, grid fault, lightning feeder protection, automatic wake-up, synchronization, and shutdown.
 - Final product label or nameplate showing rated power, input/output voltage and frequency, maximum input voltage, MPPT range, and serial number.
 
-## 10. Limitations
+## 11. Limitations
 
 - This draft is based only on the supplied documents and identified facts available at the time of review.
 - It does not certify compliance or make an import approval decision.
 - Certification-body listing, testing scope, and current certificate status were not independently verified.
 - The exact inverter model intended for import should be confirmed before relying on this review package.
+
+## 12. Appendix A - Full Model List
+
+**SGS IEC/EN 62109-1 Test Report - CHISAGE CE-1P single-phase inverter models**
+
+- CE-1P3001G-230-EU
+- CE-1P5001G-230-EU
+- CE-1P6001G-230-EU
+- CE-1P8001G-230-EU
+- CE-1P10001G-230-EU
+- CE-1P13001G-230-EU
+- CE-1P16001G-230-EU
+- CE-1P18001G-230-EU
+- CE-1P20001G-230-EU
+
+**SGS Certificate of Conformity - Deye SUN G06P3 inverter models**
+
+AM2 models:
+
+- SUN-3K-G06P3-EU-AM2
+- SUN-4K-G06P3-EU-AM2
+- SUN-5K-G06P3-EU-AM2
+- SUN-6K-G06P3-EU-AM2
+- SUN-7K-G06P3-EU-AM2
+- SUN-8K-G06P3-EU-AM2
+- SUN-9K-G06P3-EU-AM2
+- SUN-10K-G06P3-EU-AM2
+- SUN-12K-G06P3-EU-AM2
+- SUN-15K-G06P3-EU-AM2
+
+AM2-P1 models:
+
+- SUN-3K-G06P3-EU-AM2-P1
+- SUN-4K-G06P3-EU-AM2-P1
+- SUN-5K-G06P3-EU-AM2-P1
+- SUN-6K-G06P3-EU-AM2-P1
+- SUN-7K-G06P3-EU-AM2-P1
+- SUN-8K-G06P3-EU-AM2-P1
+- SUN-9K-G06P3-EU-AM2-P1
+- SUN-10K-G06P3-EU-AM2-P1
+- SUN-12K-G06P3-EU-AM2-P1
+- SUN-15K-G06P3-EU-AM2-P1

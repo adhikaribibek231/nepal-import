@@ -37,13 +37,21 @@ def add_bullets(lines: list[str], values: list[str]) -> None:
         lines.append(f"- {value}")
 
 
-def add_model_list(lines: list[str], models: list[str]) -> None:
+def add_table(lines: list[str], headers: list[str], rows: list[list[str]]) -> None:
+    lines.append("| " + " | ".join(headers) + " |")
+    lines.append("|" + "|".join("---" for _ in headers) + "|")
+
+    for row in rows:
+        lines.append("| " + " | ".join(row) + " |")
+
+    lines.append("")
+
+
+def add_model_bullets(lines: list[str], models: list[str]) -> None:
     if not models:
         lines.append("- Not identified in the supplied documents.")
         return
 
-    lines.append("Models listed:")
-    lines.append("")
     for model in sorted(models, key=model_sort_key):
         lines.append(f"- {model}")
 
@@ -71,9 +79,8 @@ def add_document_model_review(
     facts,
     source_file: str,
     family_description: str,
+    model_summary: str,
 ) -> None:
-    models = display_models_for_source(facts, source_file)
-
     lines.append(f"**{DOCUMENT_LABELS[source_file]} - {family_description}**")
     lines.append("")
     lines.append(
@@ -82,13 +89,7 @@ def add_document_model_review(
     lines.append(
         f"- IP rating: {format_inline_values(values_for_source(facts, source_file, 'ip_rating'))}"
     )
-    lines.append("")
-
-    if source_file == CERTIFICATE:
-        add_sun_model_groups(lines, models)
-    else:
-        add_model_list(lines, models)
-
+    lines.append(f"- Models: {model_summary}")
     lines.append("")
 
 
@@ -100,21 +101,108 @@ def sentence_value(value: str) -> str:
     return value.rstrip(".")
 
 
-def found_requirements(mapping) -> list[str]:
-    return [
-        item.requirement
-        for item in mapping.mappings
-        if item.status == "evidence_found"
-    ]
+def has_standard(facts, standard_prefix: str) -> bool:
+    return any(
+        standard_prefix in standard
+        for standard in values_for_field(facts, "standard")
+    )
 
 
-def add_nepal_reference_items(lines: list[str], mapping) -> None:
-    evidence_items = found_requirements(mapping)
+def evidence_status(has_evidence: bool) -> str:
+    if has_evidence:
+        return "Evidence identified"
 
-    lines.append("The following review reference items had evidence in the supplied documents:")
-    lines.append("")
-    add_bullets(lines, evidence_items)
-    lines.append("")
+    return "Not found in supplied documents"
+
+
+def add_manufacturer_certificate_table(lines: list[str], facts) -> None:
+    add_table(
+        lines,
+        ["Item", "Information found"],
+        [
+            [
+                "Manufacturer named in test report",
+                document_values_line(facts, TEST_REPORT, "manufacturer"),
+            ],
+            [
+                "Applicant named in test report",
+                document_values_line(facts, TEST_REPORT, "applicant"),
+            ],
+            [
+                "Factory named in test report",
+                document_values_line(facts, TEST_REPORT, "factory"),
+            ],
+            [
+                "Certificate holder named in certificate",
+                document_values_line(facts, CERTIFICATE, "certificate_holder"),
+            ],
+            [
+                "Certificate number",
+                document_values_line(facts, CERTIFICATE, "certificate_number"),
+            ],
+            [
+                "Test report number",
+                document_values_line(facts, TEST_REPORT, "report_number"),
+            ],
+        ],
+    )
+
+
+def add_review_snapshot(lines: list[str], facts) -> None:
+    lines.extend(["### Evidence identified in supplied documents", ""])
+    add_table(
+        lines,
+        ["Review item", "Status"],
+        [
+            ["IEC 61727 evidence", evidence_status(has_standard(facts, "IEC 61727"))],
+            ["IEC 62116 evidence", evidence_status(has_standard(facts, "IEC 62116"))],
+            [
+                "IEC 62109-1 evidence",
+                evidence_status(has_standard(facts, "IEC 62109-1")),
+            ],
+            [
+                "IP65 or higher protection evidence",
+                evidence_status(bool(values_for_field(facts, "ip_rating"))),
+            ],
+            [
+                "Manufacturer information",
+                evidence_status(bool(values_for_field(facts, "manufacturer"))),
+            ],
+            [
+                "Model information",
+                evidence_status(bool(values_for_field(facts, "model_name"))),
+            ],
+        ],
+    )
+
+    lines.extend(["### Additional evidence recommended", ""])
+    add_table(
+        lines,
+        ["Review item", "Status"],
+        [
+            [
+                "IEC 62891 MPPT efficiency evidence",
+                "Not found in supplied documents",
+            ],
+            [
+                "IEC 62109-2 inverter safety evidence",
+                "Not found in supplied documents",
+            ],
+            ["Warranty agreement", "Not found in supplied documents"],
+            [
+                "Technical datasheet/catalogue for exact imported model",
+                "Not found in supplied documents",
+            ],
+            [
+                "Data logging / monitoring evidence",
+                "Not found in supplied documents",
+            ],
+            [
+                "Efficiency, THD, and no-load loss evidence",
+                "Not found in supplied documents",
+            ],
+        ],
+    )
 
 
 def add_consistent_information(lines: list[str]) -> None:
@@ -172,6 +260,24 @@ def add_additional_documents(lines: list[str]) -> None:
     )
 
 
+def add_full_model_list_appendix(lines: list[str], facts) -> None:
+    lines.extend(["## 12. Appendix A - Full Model List", ""])
+
+    lines.append(
+        f"**{DOCUMENT_LABELS[TEST_REPORT]} - CHISAGE CE-1P single-phase inverter models**"
+    )
+    lines.append("")
+    add_model_bullets(lines, display_models_for_source(facts, TEST_REPORT))
+    lines.append("")
+
+    lines.append(
+        f"**{DOCUMENT_LABELS[CERTIFICATE]} - Deye SUN G06P3 inverter models**"
+    )
+    lines.append("")
+    add_sun_model_groups(lines, display_models_for_source(facts, CERTIFICATE))
+    lines.append("")
+
+
 def generate_final_review_draft(
     facts_path: str,
     mapping_path: str,
@@ -179,7 +285,7 @@ def generate_final_review_draft(
     output_path: str,
 ) -> None:
     facts = load_extracted_facts(facts_path)
-    mapping = load_review_mapping(mapping_path)
+    load_review_mapping(mapping_path)
     load_conflict_matrix(conflict_path)
 
     nepqa_standards, other_standards = split_standards(
@@ -203,14 +309,25 @@ def generate_final_review_draft(
         "",
         "Additional documentation may be required before a Nepal import review can be completed.",
         "",
-        "## 2. Documents Reviewed",
+        "## 2. Key Review Findings",
+        "",
+        "1. The supplied documents appear to describe different inverter model families.",
+        "2. The exact inverter model intended for Nepal import could not be confirmed.",
+        "3. Evidence for IEC 61727, IEC 62116, and IEC 62109-1 was identified.",
+        "4. Additional documentation is still required before a full Nepal import review can be completed.",
+        "",
+        "## 3. Manufacturer and Certificate Information",
         "",
     ]
+
+    add_manufacturer_certificate_table(lines, facts)
+
+    lines.extend(["## 4. Documents Reviewed", ""])
 
     for source_file in (TEST_REPORT, CERTIFICATE):
         lines.append(f"- {DOCUMENT_LABELS[source_file]}")
 
-    lines.extend(["", "## 3. Product and Variant Review", ""])
+    lines.extend(["", "## 5. Product and Variant Review", ""])
     lines.append(
         "The reviewed documents appear to describe different grid-connected photovoltaic inverter families."
     )
@@ -220,36 +337,17 @@ def generate_final_review_draft(
         facts,
         TEST_REPORT,
         "CHISAGE CE-1P single-phase inverter models",
+        "CE-1P series, full list in Appendix A",
     )
     add_document_model_review(
         lines,
         facts,
         CERTIFICATE,
         "Deye SUN G06P3 inverter models",
+        "SUN G06P3 AM2 and AM2-P1 variants, full list in Appendix A",
     )
 
-    lines.extend(["## 4. Manufacturer and Certificate Information", ""])
-    lines.append(
-        f"- Manufacturer named in the test report: {document_values_line(facts, TEST_REPORT, 'manufacturer')}"
-    )
-    lines.append(
-        f"- Applicant named in the test report: {document_values_line(facts, TEST_REPORT, 'applicant')}"
-    )
-    lines.append(
-        f"- Factory named in the test report: {document_values_line(facts, TEST_REPORT, 'factory')}"
-    )
-    lines.append(
-        f"- Certificate holder named in the certificate: {document_values_line(facts, CERTIFICATE, 'certificate_holder')}"
-    )
-    lines.append(
-        f"- Certificate number: {document_values_line(facts, CERTIFICATE, 'certificate_number')}"
-    )
-    lines.append(
-        f"- Test report number: {document_values_line(facts, TEST_REPORT, 'report_number')}"
-    )
-    lines.append("")
-
-    lines.extend(["## 5. Test and Standards Evidence", ""])
+    lines.extend(["## 6. Test and Standards Evidence", ""])
     lines.append("**NEPQA-relevant standards identified:**")
     add_bullets(lines, nepqa_standards)
     lines.append("")
@@ -266,21 +364,21 @@ def generate_final_review_draft(
     )
     lines.append("")
 
-    lines.extend(["## 6. Nepal Import Review Reference Items", ""])
-    add_nepal_reference_items(lines, mapping)
+    lines.extend(["## 7. Nepal Import Review Snapshot", ""])
+    add_review_snapshot(lines, facts)
 
-    lines.extend(["## 7. Consistent Information Across Documents", ""])
+    lines.extend(["## 8. Consistent Information Across Documents", ""])
     add_consistent_information(lines)
 
-    lines.extend(["## 8. Mismatches and Items Requiring Confirmation", ""])
+    lines.extend(["## 9. Mismatches and Items Requiring Confirmation", ""])
     add_mismatch_summary(lines, facts)
 
-    lines.extend(["## 9. Additional Documents Recommended", ""])
+    lines.extend(["## 10. Additional Documents Recommended", ""])
     add_additional_documents(lines)
 
     lines.extend(
         [
-            "## 10. Limitations",
+            "## 11. Limitations",
             "",
             "- This draft is based only on the supplied documents and identified facts available at the time of review.",
             "- It does not certify compliance or make an import approval decision.",
@@ -289,6 +387,8 @@ def generate_final_review_draft(
             "",
         ]
     )
+
+    add_full_model_list_appendix(lines, facts)
 
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
