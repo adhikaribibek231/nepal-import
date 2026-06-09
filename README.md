@@ -204,3 +204,14 @@ Main improvements:
 - Easier to review all available models at a glance.
 - SUN model variants are clearly organized.
 - No ambiguity from representative ranges — all models are visible.
+
+
+## Future Improvements
+
+Potential future improvements:
+
+- LLM-assisted extraction for difficult unstructured fields.
+- Automatic standard normalization (IEC vs IEC/EN variants).
+- PDF export of the final review draft.
+- IECEE / IECRE verification integration.
+- Additional technical datasheet extraction.
